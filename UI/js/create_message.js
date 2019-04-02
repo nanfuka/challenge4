@@ -1,16 +1,14 @@
 document.getElementById('send').addEventListener('click', Compose);
 
-
-const postUrl = 'http://127.0.0.1:5000/api/v2/message';
+const postmessage = 'http://127.0.0.1:5000/api/v2/message';
 
 function Compose(e){
     e.preventDefault();
     token = localStorage.getItem('token');
     if (token === null) {
         alert('You must log in');
-        // window.location.replace('UI/index.html');
+
     };
-    document.getElementById("stats").value = "sent";
     
     let reciever_email = document.getElementById('reciever_email').value;
     let subject = document.getElementById('subject').value;
@@ -24,7 +22,7 @@ function Compose(e){
     }
 
 
-    fetch(postUrl, {
+    fetch(postmessage, {
         method: 'POST',
         // mode: 'cors',
         headers: {
@@ -38,11 +36,10 @@ function Compose(e){
         console.log(response);
         if (response.message === 'you have successfully created a message'){
             document.getElementById("positiveresponse").innerHTML = "message sent"
-            // window.location.replace('/UI/html/signin.html');
         } else {
             document.getElementById("negativeresponse").innerHTML = response.error
-            // alert(response.message);
         }
     })
     .catch(err => console.log(err));
 }
+

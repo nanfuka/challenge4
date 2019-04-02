@@ -31,11 +31,12 @@ function RegisterUser(e) {
 
             if (data.message === 'thanks for registering with Epic mail') {
 
-                window.location.replace('/UI/html/signin.html')
+                window.location.replace('/UI/html/user_dash.html')
 
             } else {
 
-                document.getElementById("validation").innerHTML = data.error
+                document.getElementById("negativeresponse").innerHTML = data.error
+                document.getElementById("negativeresponse").style.display = block
             }
         })
 }

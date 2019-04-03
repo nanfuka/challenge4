@@ -5,10 +5,10 @@
         Epic-mail
     </title>
     <link rel="stylesheet" href="../css/style.css">
-    <script src="../js/scripts.js"></script>
+    <script src="../js/get_recieved.js"></script>
 </head>
 
-<body>
+<body onload="myFunction()">
     <div class="background">
         <div class="header">
             <div>
@@ -20,19 +20,12 @@
                 <h1>MAIL</h1>
             </div>
 
-
-
-
-
-
-
-
             <div class="left-header">
                 <!-- <p>kalungi2k6@gm.com</p> -->
                 <p><a href="../index.html">Home</p></a>
                 <p><a href="signin.html">Logout</p></a>
             </div>
-
+            <div id="no_mail"></div>
         </div>
         <div class="row1">
 
@@ -52,6 +45,7 @@
                 <a href="#">delete</a>
                 <a href="#">retract-email</a>
                 <a href="compose.html">compose</a>
+                <a href="admin.html">create a group</a>
             </div>
         </div>
         <div class=row2>
@@ -59,24 +53,23 @@
             <button>delete</button>
             <button>retract-email</button>
             <button><a href="compose.html">compose</a></button>
+            <button><a href="admin.html">create a group</a></button>
         </div>
 
         <div class="colrow">
             <div class="colmn1">
                 <a href="user_dash.html" class="active-page">inbox(2)</a>
-                <a href="draft.html">draft(2)</a>
+                <a href="sent.html">sent(2)</a>
             </div>
             <div class="main-body">
-                <div class="row3">
-                    <p><input type="checkbox"> Hellen</p>
-                    <p><a href="read_message.html"> look into coursework</a></p>
-                </div>
-                <div class="row3">
-                    <p><input type="checkbox"> Natalie</p>
-                    <p>clear my fees balance</p>
+                <div id="nomail"></div>
+                <div class="row3" id="row3">
+                    <div id="info"></div>
+                    <div id="emails"></div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
 
 </body>

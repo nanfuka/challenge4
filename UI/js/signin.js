@@ -35,7 +35,8 @@ document.getElementById('login').addEventListener('click', Login);
 
                             } else {
 
-                                document.getElementById("validation").innerHTML = data.error
+                                document.getElementById("negativeresponse").innerHTML = data.error
                             }
                         })
                 }
+

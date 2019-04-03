@@ -7,8 +7,66 @@ html {
     height: 100%;
     margin: 0;
 }
+.recieved{
+    display: flex;
+    flex-direction: row;
+    /* margin: 1%; */
 
+}
+.checkbox{
+    font-display: flex;
+    flex-direction: column; 
+    margin: 1%;
+}
+.date{
+    /* float: right; */
+    margin-left: 2%;
+}
+.recemail{
+    font-display: flex;
+    flex-direction: column; 
+    margin-left: 2%;
+    margin-right: 2%;
+}
 
+#positiveresponse{
+    
+    color: rgb(131, 131, 245);
+    text-align: center;
+    background-color: rgb(4, 4, 32);
+    margin-bottom: 1%;
+    
+    width: 70.5%;
+    height:5%;
+    margin-left: 11%;
+    
+}
+#info input{
+    display: flex;
+    flex-direction: column;
+}
+#validations{
+    
+}
+#emails{
+    display: block;
+    /* flex-direction: column; */
+}
+#negativeresponse{
+    color: #111110;
+    text-align: center;
+    font-size: 150%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 40%;
+    height: auto;
+    margin-left: 29%;
+    background-color: palevioletred;
+    
+    align-items: center;
+    justify-content: center;
+}
 .background {
     background-image: url("../images/black.jpg");
     height: 100%;
@@ -19,9 +77,16 @@ html {
     background-size: cover;
     background-attachment: fixed
 }
-.dropdowns{
+/* .dropdowns{
     di
-}
+} */
+
+/* .errors{
+    background-color: palevioletred;
+    width: 100%;
+    margin-top: 5%;
+    border:5%;
+} */
 .main-row {
     display: block;
     text-align: center;
@@ -88,6 +153,7 @@ html {
     width: 40%;
     height: auto;
     margin-left: 29%;
+    margin-top: 4%;
     background-color: rgb(251, 255, 255);
     /* padding-top: 10%; */
     align-items: center;

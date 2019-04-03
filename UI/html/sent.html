@@ -5,9 +5,10 @@
         Epic-mail
     </title>
     <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/sent.js"></script>
 </head>
 
-<body>
+<body onload="mySent()">
     <div class="background">
             <!-- <div class = "header"> -->
                     <!-- <div >
@@ -46,16 +47,14 @@
         <div class="colrow">
             <div class="colmn1">
                 <a href="user_dash.html">inbox(2)</a>
-                <a href="draft.html" class="active-page">draft(2)</a>
+                <a href="draft.html" class="active-page">sent(2)</a>
             </div>
             <div class="main-body">
-                <div class="row3">
-                    <p><input type="checkbox"> Hellen</p>
-                    <p><a href="read_message.html"> look into coursework</a></p>
+                <div id="nomail"></div>
+                <div class="row3" id="row3">
+                    <div id="info"></div>
+                    <div id="emails"></div>
                 </div>
-                <div class="row3">
-                    <p><input type="checkbox"> Natalie</p>
-                    <p>clear my fees balance</p>
                 </div>
             </div>
         </div>

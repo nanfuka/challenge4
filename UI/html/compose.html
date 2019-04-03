@@ -1,5 +1,4 @@
 <html>
-
 <head>
     <title>
         Epic-mail
@@ -12,7 +11,6 @@
         <div class="header">
             <div>
                     <h1 class = "blue">Epic</h1>
-                <!-- <img src="../images/logo.jpg" alt="logo" style="width:10%;height:10%;"> -->
             </div>
             <div>
                 <h1>MAIL</h1>
@@ -25,45 +23,49 @@
         </div>
         <div class="row1">
             
-            <!-- <p>kalungi2k6@gm.com</p> -->
-
         </div>
         <div class=row2>
-            
-            <!-- <a href = "compose.html"><button>compose</button></a> -->
-            <!-- <button>send</button>
-            <button>save Draft</button>
-            <button>discard</button>
-            <button><a href = "compose.html" class = "active-pageS">compose</a></button> -->
+ 
         </div>
+
         <div class="colrow">
             <div class="colmn1">
-                <a href="user_dash.html">inbox(2)</a>
+                <a href="user_dash.html" id = "inboxnumber">inbox(2)</a>
                 <a href="draft.html">draft(2)</a>
+                <a href="sent.html">sent(2)</a>
             </div>
             <div class="main-body">
+
                 <div class="compose-row1">
-                        <p>To: <input type = "text"></p>
+                        <p>To: <input type = "text" id = "reciever_email"></p>
 
                 </div>
                 <div class="compose-row2">
-                        <p>Subject: <input type = "text"></p>
+                        <p>Subject: <input type = "text" id = "subject"></p>
 
                 </div>
+                <!-- <div class="compose-row2">
+                        <p>status: <input type = "text" id = "status"></p>
+
+                </div> -->
+
                 <div class="compose-row3">
-                        <p>Content: <input type = "text"></p>
+                        <p>Content: <input type = "text" id = "message"></p>
                 
 
-            
+                        <div id = "positiveresponse"></div>
+                        <div id = "negativeresponse"></div>
                 <div class = "row-last">
-                        <button>send</button>
+                        <button id = "send" value="sent">send</button>
                         <button>save Draft</button>
                         <button>discard</button>
+             
                     </div>
             </div>
         </div>
     </div>
 
 </body>
+<script src="../js/create_message.js"></script>
 
 </html>

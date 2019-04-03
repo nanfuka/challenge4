@@ -13,7 +13,7 @@ function Compose(e){
     let reciever_email = document.getElementById('reciever_email').value;
     let subject = document.getElementById('subject').value;
     let message = document.getElementById('message').value;
-    let status = document.getElementById('status').value;
+    let status = "sent";
     let data = {
         reciever_email: reciever_email,
         subject: subject,
@@ -42,4 +42,8 @@ function Compose(e){
     })
     .catch(err => console.log(err));
 }
+
+// function myFunction(){
+//     document.getElementById()
+// }
 

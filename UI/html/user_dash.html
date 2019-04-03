@@ -5,10 +5,10 @@
         Epic-mail
     </title>
     <link rel="stylesheet" href="../css/style.css">
-    <script src="../js/scripts.js"></script>
+    <script src="../js/get_recieved.js"></script>
 </head>
 
-<body>
+<body onload="myFunction()">
     <div class="background">
         <div class="header">
             <div>
@@ -19,13 +19,6 @@
             <div>
                 <h1>MAIL</h1>
             </div>
-
-
-
-
-
-
-
 
             <div class="left-header">
                 <!-- <p>kalungi2k6@gm.com</p> -->
@@ -67,13 +60,11 @@
                 <a href="draft.html">draft(2)</a>
             </div>
             <div class="main-body">
-                <div class="row3">
-                    <p><input type="checkbox"> Hellen</p>
-                    <p><a href="read_message.html"> look into coursework</a></p>
+                <div id = "nomail"></div>
+                <div class="row3" id = "row3" >
+                    <div id = "info"></div>
+                    <div id = "emails"></div>
                 </div>
-                <div class="row3">
-                    <p><input type="checkbox"> Natalie</p>
-                    <p>clear my fees balance</p>
                 </div>
             </div>
         </div>

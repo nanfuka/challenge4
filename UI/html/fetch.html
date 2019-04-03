@@ -1,0 +1,19 @@
+<button id = "users">click to see data</button>
+
+
+<script>
+document.getElementById('users').addEventListener('click', getusers)
+function getusers(){
+fetch ('data.txt')
+.then ((res)=> res.json())
+
+.then((data)=>{
+    let output = `<h2>users</h2>`;
+    data.forEach(function(user){
+        output += `<ul>
+            <li> ID: ${user.id}</li>
+            </ul>`
+    })
+})
+}
+</script>

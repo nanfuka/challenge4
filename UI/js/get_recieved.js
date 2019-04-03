@@ -61,14 +61,14 @@ function myFunction() {
                     console.log(d)
                     let result = ``;
                     let email = ``;
-                    d.forEach((user) => {
+                    d.forEach((msg) => {
                        
                         result +=
                         `<div class = "recieved">
                         <div class = "checkbox"><input type = "checkbox"></div>
-                        <div class = "recemail"> ${user.sender_email}</div>
-                        <div class = "recemail"><a href = "" id = "detail"> ${user.subject}</a></div>
-                        <div class = "date"> ${user.created_on}</div>
+                        <div class = "recemail"> ${msg.sender_email}</div>
+                        <div class = "recemail"><a href ="../html/read_message.html?id=${msg.id}" id = "detail"> ${msg.subject}</a></div>
+                        <div class = "date"> ${msg.created_on}</div>
                         </div>
                         `
                 //         `<input type = "checkbox">   

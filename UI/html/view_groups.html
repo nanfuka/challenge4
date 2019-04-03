@@ -1,9 +1,3 @@
-group name
-group members
-firstname
-lastname
-contacts
-create-tables
 <html>
 
 <head>
@@ -11,9 +5,10 @@ create-tables
         Epic-mail
     </title>
     <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/allgroups.js"></script>
 </head>
 
-<body>
+<body onload="myGroups()">
     <div class="background">
         <div class="header">
             <div>
@@ -28,8 +23,10 @@ create-tables
                     <p><a href = "signin.html">Logout</p></a>
             </div>
             </div>
-
-        <button>click here to view group details</button>
+        <button id = "deletegroup">DELETE GROUP</button>
+        <div id = "allgroups"></div>
+        <div id = "no_mail"></div>
+        <div id = "info"></div>        
 
 </body>
 

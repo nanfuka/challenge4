@@ -4,16 +4,17 @@
     <title>
         Epic-mail
     </title>
-    <link rel="stylesheet" href="../css/style.css">
+    <button class = "delete">delete message</button>
+    <!-- <link rel="stylesheet" href="../css/style.css">
 </head>
-
+<but
 <body>
     <div class="background">
         <div class="header">
             <div>
                 <h1 class="blue">Epic</h1>
                 <!-- <img src="../images/logo.jpg" alt="logo" style="width:128px;height:128px;"> -->
-            </div>
+            <!-- </div>
             <div>
                 <h1>MAIL</h1>
                 <div class="dropdown">
@@ -34,9 +35,9 @@
         </div>
         <div class="row1">
 
-            <p>logout</p>
+            <p>logout</p> -->
             <!-- <p>kalungi2k6@gm.com</p> -->
-
+<!-- 
         </div>
         <div class=row2>
 
@@ -44,8 +45,10 @@
             <button>save Draft</button>
             <button>discard</button>
             <button><a href="compose.html">compose</a></button>
-        </div>
-        <div class="colrow">
+        </div> --> 
+<div id = "info"></div>
+
+        <!-- <div class="colrow">
             <div class="colmn1">
                 <a href="user_dash.html">inbox(2)</a>
                 <a href="draft.html">draft(2)</a>
@@ -56,7 +59,7 @@
 
                 </div>
                 <div class="compose-row2">
-                    <p>To: Kalungi Deb</p>
+                    <p id="receiver-addr">To: Kalungi Deb</p>
 
                 </div>
                 <div class="compose-row3">
@@ -89,8 +92,147 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
 </body>
+<script>
+    window.onload = function () {
+        let current_url = location.href
+        let url = new URL(current_url)
+        let message_id = url.searchParams.get('id')
+        readMessage(message_id)
+        r = document.getElementById('receiver-addr')
+
+    }
+
+    function readMessage(id) {
+        let readmsgUrl = `http://127.0.0.1:5000/api/v2/messages/${id}`;
+        token = localStorage.getItem('token');
+        fetch(readmsgUrl, {
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            })
+            .then(res => res.json())
+            .then(response => {
+                // alert(response)
+                // .then(response => {
+                if (response.error === "you have no recieved messages") {
+                    // console.log(response)
+                    document.getElementById('no_mail').innerHTML = response.error;
+                } else if (response.status == 200) {
+                    var d = response.data;
+                    console.log(d)
+                    let result = ``;
+                    let email = ``;
+                    d.forEach((msg) => {
+
+                        result +=
+                            `<div class = "recieved">
+                    <div class = "checkbox"><input type = "checkbox"></div>
+                    <div class = "recemail"> ${msg.sender_email}</div>
+                    <div class = "recemail"><a href ="../html/read_message.html?id=${msg.id}" id = "detail"> ${msg.subject}</a></div>
+                    <div class = "date"> ${msg.created_on}</div>
+                    <div>${msg.message}</div>
+                    <div>${msg.parent_message_id}</div>
+                    <div>${msg.message}</div>
+                    
+                    `
+                        //         `<input type = "checkbox">   
+                        //         `
+                        //   ;
+                        //   email +=`
+                        //   ${user.sender_email} 
+
+                        document.getElementById('info').innerHTML = result;
+                        // document.getElementById('emails').innerHTML = email;
+                    });
+                }
+            })
+    }
+
+
+    function deleteMessage(id) {
+        let readmsgUrl = `http://127.0.0.1:5000/api/v2/messages/${id}`;
+        token = localStorage.getItem('token');
+        fetch(readmsgUrl, {
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            })
+            .then(res => res.json())
+            .then(response => {
+                // alert(response)
+                // .then(response => {
+                if (response.error === "you have no recieved messages") {
+                    // console.log(response)
+                    document.getElementById('no_mail').innerHTML = response.error;
+                } else if (response.status == 200) {
+                    var d = response.data;
+                    console.log(d)
+                    let result = ``;
+                    let email = ``;
+                    d.forEach((msg) => {
+
+                        result +=
+                            `<div class = "recieved">
+                    <div class = "checkbox"><input type = "checkbox"></div>
+                    <div class = "recemail"> ${msg.sender_email}</div>
+                    <div class = "recemail"><a href ="../html/read_message.html?id=${msg.id}" id = "detail"> ${msg.subject}</a></div>
+                    <div class = "date"> ${msg.created_on}</div>
+                    <div>${msg.message}</div>
+                    <div>${msg.parent_message_id}</div>
+                    <div>${msg.message}</div>
+                    
+                    `
+                        //         `<input type = "checkbox">   
+                        //         `
+                        //   ;
+                        //   email +=`
+                        //   ${user.sender_email} 
+
+                        document.getElementById('info').innerHTML = result;
+                        // document.getElementById('emails').innerHTML = email;
+                    });
+                }
+            })
+    }
+    // });
+    // }
+</script>
+
+<!-- .then(res => res.json()) -->
+<!-- .then(response => {
+    if (response.error ==="you have no recieved messages"){
+        // console.log(response)
+        document.getElementById('no_mail').innerHTML = response.error;
+    }
+    else if (response.status==200){
+        var d = response.data;
+                console.log(d)
+                let result = ``;
+                let email = ``;
+                d.forEach((msg) => {
+                   
+                    result +=
+                    `<div class = "recieved">
+                    <div class = "checkbox"><input type = "checkbox"></div>
+                    <div class = "recemail"> ${msg.sender_email}</div>
+                    <div class = "recemail"><a href ="../html/read_message.html?id=${msg.id}" id = "detail"> ${msg.subject}</a></div>
+                    <div class = "date"> ${msg.created_on}</div>
+                    </div>
+                    `
+            //         `<input type = "checkbox">   
+            //         `
+            //   ;
+            //   email +=`
+            //   ${user.sender_email} 
+              
+                    document.getElementById('info').innerHTML = result;
+                    document.getElementById('emails').innerHTML = email;
+                });
+    }
+    }
+)} -->
 
 </html>

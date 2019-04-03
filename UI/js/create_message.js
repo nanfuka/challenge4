@@ -10,6 +10,7 @@ function Compose(e){
 
     };
     
+    
     let reciever_email = document.getElementById('reciever_email').value;
     let subject = document.getElementById('subject').value;
     let message = document.getElementById('message').value;
@@ -34,6 +35,10 @@ function Compose(e){
     .then(res => res.json())
     .then(response => {
         console.log(response);
+        if (response.error ==="Expired token. Please Log In again."){
+            document.getElementById("token").innerHTML = "authentication timed out, please login"
+
+        }
         if (response.message === 'you have successfully created a message'){
             document.getElementById("positiveresponse").innerHTML = "message sent"
         } else {

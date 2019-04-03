@@ -10,14 +10,23 @@ html {
 .recieved{
     display: flex;
     flex-direction: row;
+    /* margin: 1%; */
+
 }
 .checkbox{
     font-display: flex;
     flex-direction: column; 
+    margin: 1%;
+}
+.date{
+    /* float: right; */
+    margin-left: 2%;
 }
 .recemail{
     font-display: flex;
     flex-direction: column; 
+    margin-left: 2%;
+    margin-right: 2%;
 }
 
 #positiveresponse{

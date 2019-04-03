@@ -5,6 +5,7 @@
         Epic-mail
     </title>
     <link rel="stylesheet" href="../css/style.css">
+    <!-- <script src="../js/creategroup.js"></script> -->
 </head>
 
 <body>
@@ -32,32 +33,40 @@
 
 
         </div>
+        
 
         <div class=row2>
 
             <button>view all groups created</button>
             <button class="active-page">create a new group</button>
         </div>
+    
         <div class="colrow">
 
 
             <div class="main-body">
                 <div class="admin-detail">
-                    <div class="compose-row1">
+                    <!-- <div class="compose-row1">
                         <p>group id: <input type="text"></p>
 
-                    </div>
+                    </div> -->
+                    <form>
                     <div class="compose-row2">
-                        <p>Group name: <input type="text"></p>
+                        <p>Group name: <input type="text" id = "name"></p>
 
                     </div>
                     <div class="compose-row3">
-                        <p>Description: <input type="text"></p>
+                        <p>Description: <input type="text" id = "role"></p>
 
 
-                    </div class="addmember">
-                    members email:
-                    <input type="text" class="member-email"> <button>add member</button>
+                    <!-- </div class="addmember"> -->
+                    <!-- members email: -->
+                    <button id = "creategroup">submit</button>
+                    <div id ="positiveresponse"></div>
+                    <div id ="negativeresponse"></div>
+                </form>
+                <script src="../js/creategroup.js"></script>
+ 
                 </div>
             </div>
         </div>

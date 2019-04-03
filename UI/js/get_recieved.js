@@ -59,18 +59,28 @@ function myFunction() {
         else if (response.status==200){
             var d = response.data;
                     console.log(d)
-                    let result = ``;
+                    let result = `<table>
+                    <tr>
+                      <th>Sender</th>
+                      <th>Subject</th>
+                      <th>Date</th>
+                    </tr>`;
                     let email = ``;
                     d.forEach((msg) => {
                        
                         result +=
-                        `<div class = "recieved">
-                        <div class = "checkbox"><input type = "checkbox"></div>
-                        <div class = "recemail"> ${msg.sender_email}</div>
-                        <div class = "recemail"><a href ="../html/read_message.html?id=${msg.id}" id = "detail"> ${msg.subject}</a></div>
-                        <div class = "date"> ${msg.created_on}</div>
-                        </div>
-                        `
+                        `  <tr>
+                        <th>${msg.sender_email}</th>
+                        <th><a href ="../html/read_message.html?id=${msg.id}" id = "detail"> ${msg.subject}</a></th> 
+                        <th>${msg.created_on}</th>
+                      </tr>`
+                        // `<div class = "recieved">
+                        // <div class = "checkbox"><input type = "checkbox"></div>
+                        // <div class = "recemail"> ${msg.sender_email}</div>
+                        // <div class = "recemail"><a href ="../html/read_message.html?id=${msg.id}" id = "detail"> ${msg.subject}</a></div>
+                        // <div class = "date"> ${msg.created_on}</div>
+                        // </div>
+                        // `
                 //         `<input type = "checkbox">   
                 //         `
                 //   ;

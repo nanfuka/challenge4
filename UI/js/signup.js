@@ -1,3 +1,9 @@
+// let confirm_password = document.getElementById("confirm_password").value
+// let password = document.getElementById('password').value;
+// if (confirm_password != password) {
+//     document.getElementById("verify").innerHTML = "Your passwords do not match"
+//     window.location.ref = "signup.html"
+// }
 document.getElementById('signupForm').addEventListener('click', RegisterUser);
 
 function RegisterUser(e) {
@@ -14,6 +20,7 @@ function RegisterUser(e) {
         "email": email,
         "password": password
     }
+
 
     fetch('http://127.0.0.1:5000/api/v2/auth/signup', {
             method: 'POST',

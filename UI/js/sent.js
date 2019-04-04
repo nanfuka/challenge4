@@ -13,7 +13,6 @@ function mySent() {
     .then(res => res.json())
     .then(response => {
         if (response.error ==="you have no recieved messages"){
-            // console.log(response)
             document.getElementById('no_mail').innerHTML = response.error;
         }
         else if (response.status==200){
@@ -24,18 +23,13 @@ function mySent() {
                     d.forEach((user) => {
                        
                         result +=
-                        `<div class = "recieved">
+                        `<div class = "nomail">
                         <div class = "checkbox"><input type = "checkbox"></div>
                         <div class = "recemail"> ${user.reciever_email}</div>
-                        <div class = "recemail"><a href = "" id = "detail"> ${user.subject}</a></div>
+                        <div class = "recemails"><a href = "" id = "detail"> ${user.subject}</a></div>
                         <div class = "date"> ${user.created_on}</div>
                         </div>
                         `
-                //         `<input type = "checkbox">   
-                //         `
-                //   ;
-                //   email +=`
-                //   ${user.sender_email} 
                   
                         document.getElementById('info').innerHTML = result;
                         document.getElementById('emails').innerHTML = email;

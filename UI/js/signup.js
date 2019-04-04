@@ -13,6 +13,14 @@ function RegisterUser(e) {
     let lastname = document.getElementById('lastname').value;
     let email = document.getElementById('email').value;
     let password = document.getElementById('password').value;
+    let confirm_password = document.getElementById("confirm_password").value
+
+function verify(){
+    if (confirm_password != password) {
+        document.getElementById("verify").innerHTML = "Your passwords do not match"
+    }
+}
+
 
     let data = {
         "firstname": firstname,

@@ -5,18 +5,18 @@
         Epic-mail
     </title>
 </head>
-    <button id = "submit">delete message</button>
-    <div id = "delete_message"></div>
-    <!-- <link rel="stylesheet" href="../css/style.css">
+<!-- <button id="submit">delete message</button>
+<div id="delete_message"></div> -->
+
+<link rel="stylesheet" href="../css/style.css">
 </head>
-<but
+
 <body>
     <div class="background">
         <div class="header">
             <div>
                 <h1 class="blue">Epic</h1>
-                <!-- <img src="../images/logo.jpg" alt="logo" style="width:128px;height:128px;"> -->
-            <!-- </div>
+            </div>
             <div>
                 <h1>MAIL</h1>
                 <div class="dropdown">
@@ -37,9 +37,9 @@
         </div>
         <div class="row1">
 
-            <p>logout</p> -->
-            <!-- <p>kalungi2k6@gm.com</p> -->
-<!-- 
+
+            <!-- <div id="to"></div> -->
+
         </div>
         <div class=row2>
 
@@ -47,54 +47,66 @@
             <button>save Draft</button>
             <button>discard</button>
             <button><a href="compose.html">compose</a></button>
-        </div> --> 
-<div id = "info"></div>
+        </div>
+        <div id="info"></div>
 
-        <!-- <div class="colrow">
+        <div class="colrow">
             <div class="colmn1">
                 <a href="user_dash.html">inbox(2)</a>
                 <a href="draft.html">draft(2)</a>
             </div>
             <div class="main-body">
-                <div class="compose-row1">
-                    <p>From: Hellen Nalubega: nalubega@gmail.com</p>
+                <div class="compose-row11">
+                    <div>From: </div>
+                    <div id="from"></div>
 
                 </div>
                 <div class="compose-row2">
-                    <p id="receiver-addr">To: Kalungi Deb</p>
+                    <div><b>To:</b> </div>
+                    <div id="to"></div>
 
                 </div>
                 <div class="compose-row3">
-                    <p>Hello,
-                        please find all the imformation you need as regards your tuition
-                    </p>
+
+                    <div><b>Subject:</b> </div>
+                    <div id="subject"></div>
+                </div>
+
+                <div class="compose-message">
+
+                    <div><b>Message:</b> </div>
+                    <div id="message"></div>
+                </div>
+
+
+
+
+              
+            </div>
+
+            <div class="main-body">
+                    <div class="row-last">
+                            <p>Quick Reply</p>
+                        </div>
+                <div class="compose-row1">
+                    <!-- <p class="address">To: <div id="from"></div>
+                    </p> -->
+
+                </div>
+
+                <div class="qcompose-row3">
+                    <p><input type="text"></p>
 
 
 
                     <div class="row-last">
-                        <p>Quick Reply</p>
+                        <button>send</button>
+                        <button>save Draft</button>
+
                     </div>
                 </div>
-
-                <div class="main-body">
-                    <div class="compose-row1">
-                        <p class="address">To: Hellen Nalubega: nalubega@gmail.com</p>
-
-                    </div>
-
-                    <div class="qcompose-row3">
-                        <p><input type="text"></p>
-
-
-
-                        <div class="row-last">
-                            <button>send</button>
-                            <button>save Draft</button>
-
-                        </div>
-                    </div>
-                </div>
-            </div> -->
+            </div>
+        </div>
 
 </body>
 <script>
@@ -129,17 +141,23 @@
                     let email = ``;
                     d.forEach((msg) => {
 
-                        result +=
-                            `<div class = "recieved">
-                    <div class = "checkbox"><input type = "checkbox"></div>
-                    <div class = "recemail"> ${msg.sender_email}</div>
-                    <div class = "recemail"><a href ="../html/read_message.html?id=${msg.id}" id = "detail"> ${msg.subject}</a></div>
-                    <div class = "date"> ${msg.created_on}</div>
-                    <div>${msg.message}</div>
-                    <div>${msg.parent_message_id}</div>
-                    <div>${msg.message}</div>
-                    
-                    `
+                        document.getElementById("from").innerHTML = `${msg.sender_email}`;
+                        document.getElementById("to").innerHTML = `${msg.reciever_email}`;
+                        document.getElementById("message").innerHTML = `${msg.message}`;
+                        document.getElementById("subject").innerHTML = `${msg.subject}`;
+                        // result +=
+
+                        //     result +=
+                        //         `<div class = "recieved">
+                        // <div class = "checkbox"><input type = "checkbox"></div>
+                        // <div class = "recemail"> ${msg.sender_email}</div>
+                        // <div class = "recemail"><a href ="../html/read_message.html?id=${msg.id}" id = "detail"> ${msg.subject}</a></div>
+                        // <div class = "date"> ${msg.created_on}</div>
+                        // <div>${msg.message}</div>
+                        // <div>${msg.parent_message_id}</div>
+                        // <div>${msg.message}</div>
+
+                        // `
                         //         `<input type = "checkbox">   
                         //         `
                         //   ;
@@ -153,7 +171,8 @@
             })
     }
 
-document.getElementById("submit").addEventListener("submit", deleteMessage)
+    document.getElementById("submit").addEventListener("submit", deleteMessage)
+
     function deleteMessage(id) {
         let readmsgUrl = `http://127.0.0.1:5000/api/v2/messages/deleted/${id}`;
         token = localStorage.getItem('token');
@@ -171,10 +190,11 @@ document.getElementById("submit").addEventListener("submit", deleteMessage)
                     // console.log(response)
                     document.getElementById('no_mail').innerHTML = response.error;
                 } else if (response.status === 200) {
-                    document.getElementById("delete_message").innerHTML = "Message has been deleted successfully"
+                    document.getElementById("delete_message").innerHTML =
+                        "Message has been deleted successfully"
                 }
             })
-        }
+    }
 </script>
 
 </html>

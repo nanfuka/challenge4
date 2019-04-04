@@ -21,7 +21,6 @@ function Compose(e){
 
     fetch(creategroup, {
         method: 'POST',
-        // mode: 'cors',
         headers: {
             'Authorization': `Bearer ${token}`,
             'Content-Type': 'application/json'
@@ -30,11 +29,12 @@ function Compose(e){
     })
     .then(res => res.json())
     .then(response => {
-        // console.log(response);
+        console.log(response);
         if (response.status === 201){
-            document.getElementById("positiveresponse").innerHTML = "group created"
+            document.getElementById("response").innerHTML = "group created"
+            window.location.replace('./creategroup.html')
         } else {
-            document.getElementById("negativeresponse").innerHTML = response.error
+            document.getElementById("response").innerHTML = response.error
         }
     })
     .catch(err => console.log(err));

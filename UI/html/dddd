@@ -5,6 +5,8 @@
         Epic-mail
     </title>
     <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/create_message.js"></script>
+
 </head>
 
 <body>
@@ -28,14 +30,7 @@
         </div>
         <div class=row2>
 
-
-
-                <button><a href="sent.html">sent</button></a>
-                <button><a href="user_dash.html" >inbox</a></button>
-                <!-- <button>compose</button> -->
-                <button><a href="compose.html" class="active-page">compose</a></button>
-                <button><a href="admin.html">create a group</a></button>
-            </div>
+        </div>
 
         <div class="colrow">
             <div class="colmn1">
@@ -55,6 +50,7 @@
                 </div>
                 <!-- <div class="compose-row2">
                         <p>status: <input type = "text" id = "status"></p>
+
                 </div> -->
 
                 <div class="compose-row3">

@@ -498,11 +498,11 @@ footer div {
 
 }
 
-.active-page {
-    background-color: rgb(8, 8, 36);
+/* .active-page {
+    background-color: blue;
     color: aliceblue;
     text-decoration: none;
-}
+} */
 
 .navicon {
     display: none;
@@ -538,6 +538,11 @@ footer div {
     .dropdown:hover .dropbtn {
         background-color: #e7f0e7;
     }
+  .active-page {
+    background-color: blue;
+    color: aliceblue;
+    text-decoration: none;
+}  
 
 @media (max-width: 1047px) {
 

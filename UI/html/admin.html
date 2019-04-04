@@ -5,7 +5,7 @@
         Epic-mail
     </title>
     <link rel="stylesheet" href="../css/style.css">
-    <script src="../js/creategroup.js"></script> 
+    <!-- <script src="../js/creategroup.js"></script> -->
 </head>
 
 <body>
@@ -33,44 +33,42 @@
 
 
         </div>
-        
+
 
         <div class=row2>
+            <button><a href="sent.html">sent</button></a>
+            <button><a href="user_dash.html">inbox</a></button>
+            <button><a href="compose.html">compose</a></button>
+            <button><a href="admin.html" class="active-page">create a group</a></button>
+            <button><a href="view_groups.html">view all groups created</a></button>
+            <button><a href="create_groups.html">create a group</a></button>
 
-            <p><a href = "view_groups.html">view all groups created</a></p>
-            <p class="active-page">create a new group</p>
+
         </div>
-    
+
         <div class="colrow">
 
 
             <div class="main-body">
                 <div class="admin-detail">
-                    <!-- <div class="compose-row1">
-                        <p>group id: <input type="text"></p>
 
-                    </div> -->
                     <form>
-                    <div class="compose-row22">
-                        <p>Group name: <input type="text" id = "name"></p>
+                        <div class="compose-row22">
+                            <p>Group name: <input type="text" id="name"></p>
 
-                    </div>
-                    <div class="compose-row33">
-                        <p>Description: <input type="text" id = "role"></p>
+                        </div>
+                        <div class="compose-row33">
+                            <p>Description: <input type="text" id="role"></p>
 
+                            <button id="creategroup">submit</button>
+                    </form>
+                    <div id = "response"></div>
+                    <script src="../js/creategroup.js"></script>
 
-                    <!-- </div class="addmember"> -->
-                    <!-- members email: -->
-                     <button id = "creategroup">submit</button> 
-                    <!-- <div id ="positiveresponse"></div>
-                    <div id ="negativeresponse"></div>  -->
-                </form>
-                <script src="../js/creategroup.js"></script>
- 
                 </div>
             </div>
         </div>
 
 </body>
 
-</html> -->
+</html> 

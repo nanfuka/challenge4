@@ -13,7 +13,7 @@ function mySent() {
     .then(res => res.json())
     .then(response => {
         if (response.error ==="you have no recieved messages"){
-            document.getElementById('no_mail').innerHTML = response.error;
+            document.getElementById('no_mails').innerHTML = response.error;
         }
         else if (response.status==200){
             var d = response.data;

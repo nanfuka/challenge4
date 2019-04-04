@@ -36,13 +36,13 @@ function Compose(e){
     .then(response => {
         console.log(response);
         if (response.error ==="Expired token. Please Log In again."){
-            document.getElementById("token").innerHTML = "authentication timed out, please login"
+            // document.getElementById("token").innerHTML =`<h1 style="background-color:red; width: 60%; margin-left: 20%;">authentication timed out, please login</h1>` 
 
         }
         if (response.message === 'you have successfully created a message'){
-            document.getElementById("positiveresponse").innerHTML = "message sent"
+            document.getElementById("negative").innerHTML = `<h1 style="background-color:green; width: 60%; margin-left: 20%;">message sent</h1>`;
         } else {
-            document.getElementById("negativeresponse").innerHTML = response.error
+            document.getElementById("negative").innerHTML = `<h1 style="background-color:red; width: 60%; margin-left: 20%;">${response.error}</h1>`
         }
     })
     .catch(err => console.log(err));

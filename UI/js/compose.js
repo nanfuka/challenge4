@@ -37,10 +37,11 @@ function Compose(e){
     .then(response => {
         console.log(response);
         if (response.message === 'you have successfully created a message'){
-            document.getElementById("positiveresponse").innerHTML = "message sent"
+            
+            document.getElementById("response").innerHTML = `<h1 style="color:blue;">message sent successfully</h1>`
             // window.location.replace('/UI/html/signin.html');
         } else {
-            document.getElementById("negativeresponse").innerHTML = response.error
+            document.getElementById("negativeresponse").innerHTML = `h1 style="background-color:red;">${response.error}</h1>`
             // alert(response.message);
         }
     })

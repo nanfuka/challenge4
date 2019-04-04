@@ -89,8 +89,6 @@
                             <p>Quick Reply</p>
                         </div>
                 <div class="compose-row1">
-                    <!-- <p class="address">To: <div id="from"></div>
-                    </p> -->
 
                 </div>
 
@@ -145,56 +143,39 @@
                         document.getElementById("to").innerHTML = `${msg.reciever_email}`;
                         document.getElementById("message").innerHTML = `${msg.message}`;
                         document.getElementById("subject").innerHTML = `${msg.subject}`;
-                        // result +=
-
-                        //     result +=
-                        //         `<div class = "recieved">
-                        // <div class = "checkbox"><input type = "checkbox"></div>
-                        // <div class = "recemail"> ${msg.sender_email}</div>
-                        // <div class = "recemail"><a href ="../html/read_message.html?id=${msg.id}" id = "detail"> ${msg.subject}</a></div>
-                        // <div class = "date"> ${msg.created_on}</div>
-                        // <div>${msg.message}</div>
-                        // <div>${msg.parent_message_id}</div>
-                        // <div>${msg.message}</div>
-
-                        // `
-                        //         `<input type = "checkbox">   
-                        //         `
-                        //   ;
-                        //   email +=`
-                        //   ${user.sender_email} 
+                       
 
                         document.getElementById('info').innerHTML = result;
-                        // document.getElementById('emails').innerHTML = email;
+                       
                     });
                 }
             })
     }
 
-    document.getElementById("submit").addEventListener("submit", deleteMessage)
+    // document.getElementById("submit").addEventListener("submit", deleteMessage)
 
-    function deleteMessage(id) {
-        let readmsgUrl = `http://127.0.0.1:5000/api/v2/messages/deleted/${id}`;
-        token = localStorage.getItem('token');
-        fetch(readmsgUrl, {
-                headers: {
-                    'Authorization': `Bearer ${token}`
-                }
-            })
-            .then(res => res.json())
-            .then(response => {
-                console.log(response)
-                // alert(response)
-                // .then(response => {
-                if (response.error === "you have no recieved messages") {
-                    // console.log(response)
-                    document.getElementById('no_mail').innerHTML = response.error;
-                } else if (response.status === 200) {
-                    document.getElementById("delete_message").innerHTML =
-                        "Message has been deleted successfully"
-                }
-            })
-    }
+    // function deleteMessage(id) {
+    //     let readmsgUrl = `http://127.0.0.1:5000/api/v2/messages/deleted/${id}`;
+    //     token = localStorage.getItem('token');
+    //     fetch(readmsgUrl, {
+    //             headers: {
+    //                 'Authorization': `Bearer ${token}`
+    //             }
+    //         })
+    //         .then(res => res.json())
+    //         .then(response => {
+    //             console.log(response)
+    //             // alert(response)
+    //             // .then(response => {
+    //             if (response.error === "you have no recieved messages") {
+    //                 // console.log(response)
+    //                 document.getElementById('no_mail').innerHTML = response.error;
+    //             } else if (response.status === 200) {
+    //                 document.getElementById("delete_message").innerHTML =
+    //                     "Message has been deleted successfully"
+    //             }
+    //         })
+    // }
 </script>
 
 </html>

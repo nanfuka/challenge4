@@ -12,7 +12,7 @@ function myFunction() {
         })
         .then(res => res.json())
         .then(response => {
-            if (response.error === "you have no recieved messages") {
+            if (response.error = `<h1 style="color:white; background-color:red; margin: 2%; font-size: 100%;" >you dont have any recieved messages</h1>`) {
 
                 document.getElementById('no_mail').innerHTML = response.error;
             } else if (response.status == 200) {
@@ -26,9 +26,13 @@ function myFunction() {
                     result +=
                         `<div class = "nomail">
                         <div class = "recemail"> ${msg.reciever_email}</div>
+                        
+                        <div class = "recemails"><a href = "../html/delete_message.html?id=${msg.id}" id = "detail"> ${msg.id}</a></div>
+
                         <div class = "recemails"><a href = "../html/read_message.html?id=${msg.id}" id = "detail"> ${msg.subject}</a></div>
                         <div class = "date"> ${msg.created_on}</div>
                         </div>
+                       
                         `
                   
 
@@ -42,6 +46,7 @@ function myFunction() {
 
                     document.getElementById('info').innerHTML = result;
                     document.getElementById('emails').innerHTML = email;
+                    
                 });
             }
         })

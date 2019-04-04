@@ -32,7 +32,7 @@ function Compose(e){
         console.log(response);
         if (response.status === 201){
             document.getElementById("response").innerHTML = "group created"
-            window.location.replace('./creategroup.html')
+           
         } else {
             document.getElementById("response").innerHTML = response.error
         }

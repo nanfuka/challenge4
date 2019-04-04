@@ -25,10 +25,9 @@ function myGroups() {
                        
                         group +=
                         `<div class = "recieved">
-                        <div class = "checkbox"><input type = "checkbox"></div>
                         <div class = "recemail"> ${user.name}</div>
-                        <div class = "recemail"><a href = "" id = "detail"> ${user.role}</a></div>
-                        
+                        <div class = "recemail"> ${user.role}</div>
+                        <div class = "recemails"><a href = "../html/delete_group.html?id=${user.id}" id = "detail"> Delete</a></div>
                         </div>
                         `
                 //         `<input type = "checkbox">   

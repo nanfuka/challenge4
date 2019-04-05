@@ -1,0 +1,105 @@
+<html>
+
+<head>
+    <title>
+        Epic-mail
+    </title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <div class="background">
+        <div class="header">
+            <div>
+                <h1 class="blue">Epic</h1>
+            </div>
+            <div>
+                <h1>MAIL</h1>
+            </div>
+            <div class="left-header">
+                <p><a href="../index.html">Home</p></a>
+                <p><a href="signin.html">Logout</p></a>
+                <p><a href="signin.html">Login</p></a>
+            </div>
+
+        </div>
+        <div class="row1">
+
+        </div>
+        <div class=row2>
+            <button><a href="sent.html">sent</button></a>
+            <button><a href="user_dash.html">inbox</a></button>
+            <button><a href="compose.html" class="active-page">compose</a></button>
+            <button><a href="admin.html">create a group</a></button>
+            <button><a href="view_groups.html">view all groups created</a></button>
+        </div>
+
+        <!-- <div class="colrow"> -->
+
+    </div>
+    <div class="register">
+        <!-- <div class="main-body"> -->
+
+        <div class="compose-row111">
+            <p>To: <input type="text" id="reciever_email"></p>
+
+        </div>
+        <div class="compose-row112">
+            <p>Subject: <input type="text" id="subject"></p>
+
+        </div>
+        <!-- <div class="compose-row2">
+                        <p>status: <input type = "text" id = "status"></p>
+                </div> -->
+
+        <div class="compose-row3">
+            <p>write you message in the box below</p>
+            <p><input type="text" id="message"></p>
+
+
+            <!-- <div id="positiveresponse"></div>
+                    <div id="negativeresponse"></div> -->
+            <div id="reply"></div>
+            <a href="signin.html">
+                <div id="token"></div>
+            </a>
+            <div class="row-last">
+                <button id="send" value="sent">send</button>
+                <div id="negative"></div>
+            </div>
+            <footer>
+                <div class="footer1">
+                    <ul>
+                        <li><b>Our Partners</b></li>
+                        <li>Andela Uganda</li>
+                        <li>Andela Nigeria</li>
+                    </ul>
+                </div>
+
+
+
+                <div class="footer3">
+                    <p><b>Copyright 2019</b></p>
+                </div>
+
+
+
+                <div class="footer2">
+                    <ul>
+                        <li><b>Contact Us</b></li>
+                        <li>Website: www.epic.com</li>
+                        <li>Email: user@epic.com</li>
+                        <li>Tel: +07445478554</li>
+                    </ul>
+                </div>
+
+            </footer>
+</body>
+</div>
+</div>
+</div>
+
+</body>
+<script src="../js/create_message.js"></script>
+
+</html>

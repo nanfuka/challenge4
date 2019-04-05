@@ -17,38 +17,33 @@ function myFunction() {
 
                 document.getElementById('no_mail').innerHTML = response.error;
             } else if (response.status == 200) {
-                // var num = responses.number;
-                // console.log(num)
                 var d = response.data;
                 console.log(d)
-                let result = ``;
-                let email = ``;
+                let result = `<table>
+                <tr>
+                    <th>MESSAGE_ID</th>
+                    <th>SENDERS' EMAIL</th> 
+                    
+                    <th>SUBJECT</th>
+                    <th>DATE</th>
+                    <th>DELETE</th>
+                </tr>
+                    `;
+
                 d.forEach((msg) => {
                     result +=
-                        `<div class = "nomail">
-                        <div class = "recemail"> ${msg.reciever_email}</div>
-                        
-                        <div class = "recemails"><a href = "../html/delete_message.html?id=${msg.id}" id = "detail"> Delete</a></div>
-
-                        <div class = "recemails"><a href = "../html/read_message.html?id=${msg.id}" id = "detail"> ${msg.subject}</a></div>
-                        <div class = "date"> ${msg.created_on}</div>
-                        </div>
-                       
-                        `
-                  
-
-                    // result +=
-                    //     `  <tr>
-                    //     <th>${msg.sender_email}</th>
-                    //     <th><a href ="../html/read_message.html?id=${msg.id}" id = "detail"> ${msg.subject}</a></th> 
-                    //     <th>${msg.created_on}</th>
-                    //   </tr>`
-
-
-                    document.getElementById('info').innerHTML = result;
-                    document.getElementById('emails').innerHTML = email;
-                    
+                        `  
+                    <tr><td>${msg.id}</td>
+                    <td>${msg.sender_email}</td>
+                    <td><a href = "../html/read_message.html?id=${msg.id}" id = "detail"> ${msg.subject}</a></td>
+                    <td>${msg.created_on}</td>
+                    <td><a href = "../html/delete_group.html?id= ${msg.id}"> Delete</a></td></tr>
+                    `
                 });
+                result += "</table>"
+                document.getElementById('info').innerHTML = result;
+
+
             }
         })
 }

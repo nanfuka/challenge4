@@ -4,43 +4,39 @@
     <title>
         Epic-mail
     </title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/styl.css">
     <script src="../js/signup.js"></script>
 </head>
 
 <body>
-    <div class="background">
-        <div class="header">
-            <div>
-                <h1 class="blue">Epic</h1>
-            </div>
-            <div>
-                <h1>MAIL</h1>
-            </div>
-            <div class="errors">
-            </div>
+    <h1 class="title">Epic Mail Application</h1><br>
+    <div id="negativeresponse"></div>
+    <form class='login-box'>
+           
+            <h1>signup</h1>
+
+            <input placeholder="firstname" id="firstname" type="text" required><br>
+            <input placeholder="lastname" id="lastname" type="text" required><br>
+            <input placeholder="email" id="email" type="text" required><br>
+            <input placeholder="password" id="password" type="password" required><br>
+            <input placeholder="Re-password" id="confirm_password" type="password" required onchange="verify()"><br>
+            
+            <button class="myButton" id="signupForm">SIGNUP</button>
+            <div id="negativeresponse"></div>
+
+            <P>Already have an account? <a href="signin.html">login </a></P>
         </div>
-        
-
-        <form name="signin.html">
-            <div class="register">
-                    <div id="negativeresponse"></div>
-                <h1>signup</h1>
-
-                <input placeholder="firstname" id="firstname" type="text" required><br>
-                <input placeholder="lastname" id="lastname" type="text" required><br>
-                <input placeholder="email" id="email" type="text" required><br>
-                <input placeholder="password" id="password" type="password" required><br>
-                <input placeholder="Re-password" id="confirm_password" type="password" required onchange="verify()"><br>
-                
-                <button class="myButton" id="signupForm">SIGNUP</button>
-
-
-                <P>Already have an account? <a href="signin.html">login </a></P>
-            </div>
-        </form>
-        <div id = "verify"></div>
-
+        <div id = "signup"></div>
+        <script>
+        let password = document.getElementById("password").value
+        let confirmpassword = document.getElementById("confirm_password").value
+       
+        if(password !== confirmpassword){
+            document.getElementById("signup").innerHTML =="The passwords entered do not match"
+        }
+        </script>
+    </form>
+<div id = "verify"></div>
     </div>
     <script src="../js/signup.js"></script>
 </body>

@@ -1,6 +1,6 @@
-document.getElementById('send').addEventListener('click', Compose);
+document.getElementById('group_members').addEventListener('click', Compose);
 
-const postmessage = 'http://127.0.0.1:5000/api/v2/message';
+const postuser = 'api/v2/groups/<int:group_id>/users';
 
 function Compose(e) {
     e.preventDefault();
@@ -11,15 +11,13 @@ function Compose(e) {
     };
 
 
-    let reciever_email = document.getElementById('reciever_email').value;
-    let subject = document.getElementById('subject').value;
-    let message = document.getElementById('message').value;
-    let status = "sent";
+    let useremail = document.getElementById('useremail').value;
+    let userrole = document.getElementById('userrlo').value;
+
     let data = {
-        reciever_email: reciever_email,
-        subject: subject,
-        message: message,
-        status: status
+        useremail: useremail,
+        userrole: userrole,
+     
     }
 
 
@@ -38,7 +36,7 @@ function Compose(e) {
             if (response.error === "Expired token. Please Log In again.") {
 
             }
-            if (response.message === 'you have successfully created a message') {
+            if (response.message === 'you have successfully added a member to the group') {
                 document.getElementById("negative").innerHTML = `<p style="background-color:green; width: 60%; margin-left: 20%;">message sent</p>`;
             } else {
                 document.getElementById("negative").innerHTML = `<p style="background-color:red; width: 60%; margin-left: 20%;">${response.error}</p>`
@@ -47,6 +45,3 @@ function Compose(e) {
         .catch(err => console.log(err));
 }
 
-// function myFunction(){
-//     document.getElementById()
-// }

@@ -1,9 +1,9 @@
-// let confirm_password = document.getElementById("confirm_password").value
-// let password = document.getElementById('password').value;
-// if (confirm_password != password) {
-//     document.getElementById("verify").innerHTML = "Your passwords do not match"
-//     window.location.ref = "signup.html"
-// }
+let confirm_password = document.getElementById("confirm_password").value
+let password = document.getElementById('password').value;
+if (confirm_password !== password) {
+    document.getElementById("verify").innerHTML = "Your passwords do not match"
+    window.location.ref = "signup.html"
+}
 document.getElementById('signupForm').addEventListener('click', RegisterUser);
 
 function RegisterUser(e) {
@@ -50,8 +50,8 @@ function verify(){
 
             } else {
 
-                document.getElementById("negativeresponse").innerHTML = data.error
-                document.getElementById("negativeresponse").style.display = block
+                document.getElementById("negativeresponse").innerHTML =`<p style = "color: red; text-align: center;"> ${data.error}</p>`;
+               
             }
         })
 }

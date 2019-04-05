@@ -1,0 +1,199 @@
+.myButton{
+    background-color: red;
+    width: 7%;
+    height: 40px;
+    color: white;
+    border: 0;
+    border-radius: 10px;
+}
+.title {
+    text-align: center;
+}
+
+footer{ 
+    display: flex;
+    margin-top: 15%;  
+    flex-direction: row;
+    background-color: rgb(228, 194, 199);
+    justify-content: space-evenly;
+
+}
+
+tr{
+    padding: 10%;
+    margin: 10%;
+}
+td, th{
+    padding: 2%;
+    margin-left: 25%;  
+}
+table{
+    margin: 2%;
+    padding: 7%;
+
+    
+}
+.footer1{
+
+    /* float: left; */
+}
+.footer2{
+/* margin-left: 20%;    */
+
+
+}
+.footer3{
+    /* float:right;
+    margin-left: 100%; */
+}
+.middle-row{
+    padding-top: 10%;
+    text-align: center;
+}
+.middle-row p{
+    font-size: 120%
+}
+.login-box{
+width:35%; 
+padding: 2%;
+margin-left: 30%;
+margin-top: 4%;
+background-color: rgb(228, 194, 199);
+}
+.login-box input{
+    width: 100%;
+    height: 5%;
+    margin: 2%;
+    padding: 1%;
+    border: 0
+}
+.login-box button{
+    width: 100%;
+    margin: 2%;
+    padding: 1%;
+
+}
+.left-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    width: 100%;
+    background-color: rgb(228, 194, 199);
+    float: right;
+    margin-left:70%;
+}
+.left-header a{display: flex;
+    text-decoration: none;
+    float: right;
+    
+    justify-content: flex-end;
+    padding-left: 2%;
+    margin-left:2%;
+    margin-bottom: 1%;
+    margin-top: 2%;
+    text-align: end;
+   
+}
+.nav2{
+    margin-top: 30%;
+    background-color:rgb(230, 78, 101);
+}
+.navtwo{
+    display: flex;
+    background-color: red;
+    margin-top: 2%;
+    width: 100%;
+    height: 40px;
+    color: white;
+    border: 0;
+    border-radius: 10px;
+    margin: 2%;
+
+}
+.nav1{
+    background-color: rgb(228, 194, 199);
+    height: 9%;
+
+
+}
+.nav1 a{
+    text-decoration: none;
+    float: right;
+    margin: 20px;
+}
+.navbuttons{
+    margin-top: 0.5%;
+    background-color: rgb(24, 15, 16);
+    color: white;
+    
+}
+
+.navbuttons a{
+    text-decoration: none;
+    /* padding: 2%; */
+    color: rgb(252, 247, 247);
+    font-size: 100%;
+    justify-content: space-evenly;
+    padding-left: 8%;
+    align-content: center;
+}
+.grp_register{
+    /* background-color: rgb(172, 172, 201); */
+    padding: 2%;
+    text-align: center;
+
+
+}
+.container{
+    margin-left:30%;
+    margin-right:30%;
+    margin-top:5%;
+    background-color: brown;
+
+}
+.grp_register h2{
+    padding-top: 10%;
+
+}
+.grp_register input{
+    width: 250px;
+    height: 40px;
+  
+}
+.compose{
+    display: flex;
+    flex-direction: column;
+    width:auto;
+    background-color: white;
+    text-align: center;
+    /* margin-top: 20% */
+}
+.to{
+    width:80%;
+    height: 4%;
+    margin-left: 3%;
+}
+.from{
+
+    width:80%;
+    height: 5%;
+    margin-left: 3%;
+}
+.message{
+    width:80%;
+    height: 40%;
+    margin-left:3%;
+
+}
+.subject{
+    width:80%;
+    /* height: 40%; */
+    margin: 4%; 
+}
+.nav2{
+    padding: 15%;
+}
+
+
+
+

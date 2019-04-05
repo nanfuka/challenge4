@@ -1,182 +1,107 @@
-<html>
+<<html>
 
-<head>
-    <title>
-        Epic-mail
-    </title>
-</head>
-<!-- <button id="submit">delete message</button>
-<div id="delete_message"></div> -->
-
-<link rel="stylesheet" href="../css/style.css">
-</head>
-
-<body>
-    <div class="background">
-        <div class="header">
-            <div>
-                <h1 class="blue">Epic</h1>
+        <head>
+            <title>
+                Epic-mail
+            </title>
+            <link rel="stylesheet" href="../css/styl.css">
+            <script src="../js/get_recieved.js"></script>
+        </head>
+        
+        <body onload="myFunction()">
+            <div class="nav1">
+                <a href="../index.html">Home</a>
+                <a href="signin.html">Logout</a>
+                <a href="signin.html">Login</a>
             </div>
-            <div>
-                <h1>MAIL</h1>
-                <div class="dropdown">
-                    <button class="dropbtn">Menu</button>
-                    <div class="dropdown-content">
-                        <a href="#">send</a>
-                        <a href="#">save draft</a>
-                        <a href="#">discard</a>
-                        <a href="#">compose</a>
-                    </div>
-                </div>
-            </div>
-            <div class="left-header">
-                <p><a href="../index.html">Home</p></a>
-                <p><a href="signin.html">Logout</p></a>
-            </div>
-
-        </div>
-        <div class="row1">
+            <div class="navbuttons">
+                <a href="sent.html">sent</a>
+                <a href="user_dash.html" class="active-page">inbox</a>
+                <a href="compose.html">compose</a>
+                <a href="admin.html">create a group</a>
+                <a href="view_groups.html">view all groups created</a>
 
 
-            <!-- <div id="to"></div> -->
+                <div id="info"></div>
 
-        </div>
-        <div class=row2>
-                <button><a href="sent.html">sent</button></a>
-                <button><a href="user_dash.html">inbox</a></button>
-                <button><a href="compose.html">compose</a></button>
-                <button><a href="admin.html" >create a group</a></button>
-                <button><a href="view_groups.html">view all groups created</a></button>
-                <button><a href="create_groups.html">create a group</a></button>
-        </div>
-        <div id="info"></div>
-
-        <div class="colrow">
-            <div class="colmn1">
-                <a href="user_dash.html">inbox(2)</a>
-                <a href="draft.html">draft(2)</a>
-            </div>
-            <div class="main-body">
-                <div class="compose-row11">
-                    <div>From: </div>
-                    <div id="from"></div>
-
-                </div>
-                <div class="compose-row2">
-                    <div><b>To:</b> </div>
-                    <div id="to"></div>
-
-                </div>
-                <div class="compose-row3">
-
-                    <div><b>Subject:</b> </div>
-                    <div id="subject"></div>
-                </div>
-
-                <div class="compose-message">
-
-                    <div><b>Message:</b> </div>
-                    <div id="message"></div>
-                </div>
-
-
-
-
-              
-            </div>
-
-            <div class="main-body">
-                    <div class="row-last">
-                            <p>Quick Reply</p>
+                <div class="colrow">
+                
+                    <div class="main-body">
+                        <div class="compose-row11">
+                            <div>From: </div>
+                            <div id="from"></div>
+        
                         </div>
-                <div class="compose-row1">
-
-                </div>
-
-                <div class="qcompose-row3">
-                    <p><input type="text"></p>
-
-
-
-                    <div class="row-last">
-                        <button>send</button>
-                        <button>save Draft</button>
-
+                        <div class="compose-row2">
+                            <div><b>To:</b> </div>
+                            <div id="to"></div>
+        
+                        </div>
+                        <div class="compose-row3">
+        
+                            <div><b>Subject:</b> </div>
+                            <div id="subject"></div>
+                        </div>
+        
+                        <div class="compose-message">
+        
+                            <div><b>Message:</b> </div>
+                            <div id="message"></div>
+                        </div>
+                      
+                    </div>
+        
+                            
+                                <button id = "send">send</button>
+        
+        
+                            
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-
-</body>
-<script>
-    window.onload = function () {
-        let current_url = location.href
-        let url = new URL(current_url)
-        let message_id = url.searchParams.get('id')
-        readMessage(message_id)
-        r = document.getElementById('receiver-addr')
-
-    }
-
-    function readMessage(id) {
-        let readmsgUrl = `http://127.0.0.1:5000/api/v2/messages/${id}`;
-        token = localStorage.getItem('token');
-        fetch(readmsgUrl, {
-                headers: {
-                    'Authorization': `Bearer ${token}`
-                }
-            })
-            .then(res => res.json())
-            .then(response => {
-                // alert(response)
-                // .then(response => {
-                if (response.error === "you have no recieved messages") {
-                    // console.log(response)
-                    document.getElementById('no_mail').innerHTML = response.error;
-                } else if (response.status == 200) {
-                    var d = response.data;
-                    console.log(d)
-                    let result = ``;
-                    let email = ``;
-                    d.forEach((msg) => {
-
-                        document.getElementById("from").innerHTML = `${msg.sender_email}`;
-                        document.getElementById("to").innerHTML = `${msg.reciever_email}`;
-                        document.getElementById("message").innerHTML = `${msg.message}`;
-                        document.getElementById("subject").innerHTML = `${msg.subject}`;
-                       
-
-                        document.getElementById('info').innerHTML = result;
-                       
-                    });
-                }
-            })
-    }
-
-    // document.getElementById("submit").addEventListener("submit", deleteMessage)
-
-    // function deleteMessage(id) {
-    //     let readmsgUrl = `http://127.0.0.1:5000/api/v2/messages/deleted/${id}`;
-    //     token = localStorage.getItem('token');
-    //     fetch(readmsgUrl, {
-    //             headers: {
-    //                 'Authorization': `Bearer ${token}`
-    //             }
-    //         })
-    //         .then(res => res.json())
-    //         .then(response => {
-    //             console.log(response)
-    //             // alert(response)
-    //             // .then(response => {
-    //             if (response.error === "you have no recieved messages") {
-    //                 // console.log(response)
-    //                 document.getElementById('no_mail').innerHTML = response.error;
-    //             } else if (response.status === 200) {
-    //                 document.getElementById("delete_message").innerHTML =
-    //                     "Message has been deleted successfully"
-    //             }
-    //         })
-    // }
-</script>
-
-</html>
+        
+        </body>
+        <script>
+            window.onload = function () {
+                let current_url = location.href
+                let url = new URL(current_url)
+                let message_id = url.searchParams.get('id')
+                readMessage(message_id)
+                r = document.getElementById('receiver-addr')
+        
+            }
+        
+            function readMessage(id) {
+                let readmsgUrl = `http://127.0.0.1:5000/api/v2/messages/${id}`;
+                token = localStorage.getItem('token');
+                fetch(readmsgUrl, {
+                        headers: {
+                            'Authorization': `Bearer ${token}`
+                        }
+                    })
+                    .then(res => res.json())
+                    .then(response => {
+                        // alert(response)
+                        // .then(response => {
+                        if (response.error === "you have no recieved messages") {
+                            // console.log(response)
+                            document.getElementById('no_mail').innerHTML = response.error;
+                        } else if (response.status == 200) {
+                            var d = response.data;
+                            console.log(d)
+                            let result = ``;
+                            let email = ``;
+                            d.forEach((msg) => {
+        
+                                document.getElementById("from").innerHTML = `${msg.sender_email}`;
+                                document.getElementById("to").innerHTML = `${msg.reciever_email}`;
+                                document.getElementById("message").innerHTML = `${msg.message}`;
+                                document.getElementById("subject").innerHTML = `${msg.subject}`;
+                               
+        
+                                document.getElementById('info').innerHTML = result;
+                               
+                            });
+                        }
+                    })
+            }

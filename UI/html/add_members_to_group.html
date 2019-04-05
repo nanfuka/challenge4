@@ -5,7 +5,7 @@
         Epic-mail
     </title>
     <link rel="stylesheet" href="../css/styl.css">
-    <script src="../js/get_recieved.js"></script>
+    <script src="../js/add_grpmembers.js"></script>
 </head>
 
 <body onload="myFunction()">
@@ -14,22 +14,26 @@
         <a href="signin.html">Logout</a>
         <a href="signin.html">Login</a>
     </div>
-    <div class="navbuttons">
-        <a href="sent.html">sent</a>
-        <a href="user_dash.html" class="active-page">inbox</a>
-        <a href="compose.html">compose</a>
-        <a href="admin.html">create a group</a>
-        <a href="view_groups.html">view all groups created</a>
 
-    </div class = "container">
-    <div class="row3" id="row3">
-        <div id="info"></div>
-        <div id="emails"></div>
-        <div id="userid"></div>
-        <div id="no_mail"></div>
 
-    </div>
-    </div>
+    <form class="grp_register">
+        <h2>ADD NEW MEMBER TO GROUP</h2>
+        <div class="compose-row22">
+            <p>Group name: <input type="text" id="name"></p>
+
+            <div class="compose-row22">
+                <p>New Members' name: <input type="text" id="name"></p>
+                <div class="compose-row22">
+                    <p>Members role: <input type="text" id="name"></p>
+                </div>
+
+
+                <button class="myButton" id="group_members">submit</button>
+    </form>
+    <div id="response"></div>
+    <script src="../js/creategroup.js"></script>
+
+
 
     <footer>
         <div class="footer1">
@@ -59,6 +63,3 @@
 
     </footer>
 </body>
-<script src="../js/get_recieved.js"></script>
-
-</html>

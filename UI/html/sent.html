@@ -1,60 +1,37 @@
-<html>
+<<html>
 
-<head>
-    <title>
-        Epic-mail
-    </title>
-    <link rel="stylesheet" href="../css/style.css">
-    <script src="../js/sent.js"></script>
-</head>
-
-<body onload="mySent()">
-    <div class="background">
-        <div class="header">
-            <div>
-                <h1 class = "blue">Epic</h1>
-            </div>
-            <div>
-                <h1>MAIL</h1>
-            </div>
-            <div class="left-header">
-                    <p><a href = "../index.html">Home</p></a>
-                    <p><a href = "signin.html">Logout</p></a>
-            </div>
-
-        </div>
-        <div class="row1">
-
-        </div>
+        <head>
+            <title>
+                Epic-mail
+            </title>
+            <link rel="stylesheet" href="../css/styl.css">
+            <script src="../js/get_recieved.js"></script>
+        </head>
         
-                <div class=row2>
-
-                        <button><a href="sent.html" class="active-page">sent</button></a>
-                        <button><a href="user_dash.html">inbox</a></button>
-                        <button><a href="compose.html">compose</a></button>
-                        <button><a href="admin.html" >create a group</a></button>
-                        <button><a href="view_groups.html">view all groups created</a></button>
-                        <button><a href="create_groups.html">create a group</a></button>
-                    </div>
-       
-        <div class="colrow">
-            <div class="colmn1">
-                <a href="user_dash.html">inbox</a>
-                <a href="draft.html" class="active-page">sent</a>
+        <body onload="myFunction()">
+            <div class="nav1">
+                <a href="../index.html">Home</a>
+                <a href="signin.html">Logout</a>
+                <a href="signin.html">Login</a>
             </div>
-            <div class="main-body">
-                    <div class="row3" id="row3">
-                            <div id="info"></div>
-                            <div id="emails"></div>
-                            <div id="userid"></div>
-                            <div id="no_mail"></div>
-                            
+            <div class="navbuttons">
+                <a href="sent.html">sent</a>
+                <a href="user_dash.html" class="active-page">inbox</a>
+                <a href="compose.html">compose</a>
+                <a href="admin.html">create a group</a>
+                <a href="view_groups.html">view all groups created</a>
+
+    
+                <div class="main-body">
+                        <div class="row3" id="row3">
+                                <div id="info"></div>
+                                <div id="emails"></div>
+                                <div id="userid"></div>
+                                <div id="no_mail"></div>
+                                
+                            </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-            </div>
-        
-        </body>
-        <script src="../js/get_recieved.js"></script>
-        </html>
+
+            </body>
+            <script src="../js/get_recieved.js"></script>
+            </html>

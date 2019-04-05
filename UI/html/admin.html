@@ -4,71 +4,59 @@
     <title>
         Epic-mail
     </title>
-    <link rel="stylesheet" href="../css/style.css">
-    <!-- <script src="../js/creategroup.js"></script> -->
+    <link rel="stylesheet" href="../css/styl.css">
+    <script src="../js/signin.js"></script>
 </head>
 
-<body>
-    <div class="background">
-        <div class="header">
-            <div>
-                <h1 class="blue">Epic</h1>
-                <!-- <img src="../images/logo.jpg" alt="logo" style="width:128px;height:128px;"> -->
-            </div>
-            <div>
-                <h1>MAIL</h1>
-                <div class="dropdown">
-                    <button class="dropbtn">Menu</button>
-                    <div class="dropdown-content">
-                        <a href="view_groups.html"> view all groups created</a>
-                        <a href="#">creates a new group</a>
-
-                    </div>
-                </div>
-            </div>
-            <div class="left-header">
-                <p><a href="../index.html">Home</p></a>
-                <p><a href="signin.html">Logout</p></a>
-            </div>
+<body onload="myFunction()">
+    <div class="nav1">
+        <a href="../index.html">Home</a>
+        <a href="#" onclick = logout()>Logout</a>
+        <a href="signin.html">Login</a>
+    </div>
 
 
+    <form class = "grp_register">
+        <h2>REGISTER YOUR GROUP</h2>
+        <div class="compose-row22">
+            <p>Group name: <input type="text" id="name"></p>
+
+        </div>
+        <div class="compose-row33">
+            <p>Description: <input type="text" id="role"></p>
+
+            <button class = "myButton"id="creategroup">submit</button>
+    </form>
+    <div id="response"></div>
+    <script src="../js/creategroup.js"></script>
+
+
+
+    <footer>
+        <div class="footer1">
+            <ul>
+                <li><b>Our Partners</b></li>
+                <li>Andela Uganda</li>
+                <li>Andela Nigeria</li>
+            </ul>
         </div>
 
 
-        <div class=row2>
-            <button><a href="sent.html">sent</button></a>
-            <button><a href="user_dash.html">inbox</a></button>
-            <button><a href="compose.html">compose</a></button>
-            <button><a href="admin.html" class="active-page">create a group</a></button>
-            <button><a href="view_groups.html">view all groups created</a></button>
-            <button><a href="create_groups.html">create a group</a></button>
 
-
+        <div class="footer3">
+            <p><b>Copyright 2019</b></p>
         </div>
 
-        <div class="colrow">
 
 
-            <div class="main-body">
-                <div class="admin-detail">
-
-                    <form>
-                        <div class="compose-row22">
-                            <p>Group name: <input type="text" id="name"></p>
-
-                        </div>
-                        <div class="compose-row33">
-                            <p>Description: <input type="text" id="role"></p>
-
-                            <button id="creategroup">submit</button>
-                    </form>
-                    <div id = "response"></div>
-                    <script src="../js/creategroup.js"></script>
-
-                </div>
-            </div>
+        <div class="footer2">
+            <ul>
+                <li><b>Contact Us</b></li>
+                <li>Website: www.epic.com</li>
+                <li>Email: user@epic.com</li>
+                <li>Tel: +07445478554</li>
+            </ul>
         </div>
 
+    </footer>
 </body>
-
-</html> 

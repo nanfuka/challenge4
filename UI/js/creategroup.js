@@ -31,10 +31,10 @@ function Compose(e){
     .then(response => {
         console.log(response);
         if (response.status === 201){
-            document.getElementById("response").innerHTML = "group created"
-           
+            document.getElementById("response").innerHTML = `<p style="background-color:green; width: 17%; margin-left: 45%;">group created</p>`           
         } else {
-            document.getElementById("response").innerHTML = response.error
+            document.getElementById("response").innerHTML = `<p style="background-color:red; width: 17%; margin-left: 45%;">${response.error}</p>`           
+
         }
     })
     .catch(err => console.log(err));

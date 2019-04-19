@@ -4,40 +4,61 @@
     <title>
         Epic-mail
     </title>
-    <link rel="stylesheet" href="../css/style.css">
-    <script src="../js/allgroups.js"></script>
+    <link rel="stylesheet" href="../css/site.css">
+    <!-- <script src="../js/get_recieved.js"></script> -->
 </head>
 
-<body onload="myGroups()">
-    <div class="background">
-        <div class="header">
-            <div>
-                    <h1 class = "blue">Epic</h1>
+<body onload="myFunction()">
+    <div class="nav1">
+        <a href="../index.html">Home</a>
+        <a href="signin.html">Logout</a>
+        <a href="signin.html">Login</a>
+    </div>
+    <div class="navrow">
+        <div class="navbuttons">
+            <a href="sent.html">sent</a>
+            <a href="user_dash.html" class="active-page">inbox</a>
+            <a href="compose.html">compose</a>
+            <a href="admin.html">create a group</a>
+            <a href="view_groups.html">view all groups created</a>
 
-            </div>
-            <div>
-                <h1>MAIL</h1>
-            </div>
-            <div class="left-header">
-                    <p><a href = "../index.html">Home</p></a>
-                    <p><a href = "signin.html">Logout</p></a>
-            </div>
-            </div>
-            <div class=row2>
+        </div>
+        <div class="row3" id="row3">
+            <div id = "allgroups"></div>
+            <div id = "no_mail"></div>
+            <div id = "info"></div> 
 
-                    <button><a href="sent.html">sent</button></a>
-                    <button><a href="user_dash.html">inbox</a></button>
-                    <button><a href="compose.html">compose</a></button>
-                    <button><a href="admin.html" >create a group</a></button>
-                    <button><a href="view_groups.html" class="active-page">view all groups created</a></button>
+        </div>
+    </div>
+    </div>
 
-                </div>
+    <div class="fuuter">
+        <div class="footer1">
+            <ul>
+                <li><b>Our Partners</b></li>
+                <li>Andela Uganda</li>
+                <li>Andela Nigeria</li>
+            </ul>
+        </div>
 
 
-        <div id = "allgroups"></div>
-        <div id = "no_mail"></div>
-        <div id = "info"></div>        
 
+        <div class="footer3">
+            <p><b>Copyright 2019</b></p>
+        </div>
+
+
+
+        <div class="footer2">
+            <ul>
+                <li><b>Contact Us</b></li>
+                <li>Website: www.epic.com</li>
+                <li>Email: user@epic.com</li>
+                <li>Tel: +07445478554</li>
+            </ul>
+        </div>
+    </div>
 </body>
+<script src="../js/get_recieved.js"></script>
 
 </html>

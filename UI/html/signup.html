@@ -4,40 +4,32 @@
     <title>
         Epic-mail
     </title>
-    <link rel="stylesheet" href="../css/styl.css">
+    <link rel="stylesheet" href="../css/site.css">
     <script src="../js/signup.js"></script>
 </head>
 
 <body>
-    <h1 class="title">Epic Mail Application</h1><br>
-    <div id="negativeresponse"></div>
-    <form class='login-box'>
+    <div class="title"><b>EpicMAIL Application</b></div>
+    <div class = "subtitle">SIGNUP</div>
+    <!-- <div id="negativeresponse"></div> -->
+    <div class= "form">
            
-            <h1>signup</h1>
+            
+        <p id="negativeresponse"></p> 
 
             <input placeholder="firstname" id="firstname" type="text" required><br>
             <input placeholder="lastname" id="lastname" type="text" required><br>
             <input placeholder="email" id="email" type="text" required><br>
-            <input placeholder="password" id="password" type="password" required><br>
-            <input placeholder="Re-password" id="confirm_password" type="password" required onchange="verify()"><br>
+            <input placeholder="password" id="password" type="password" required><br> 
+            <!-- <input placeholder="Re-password" id="confirm_password" type="password" required onchange="verify()"><br> --> 
             
             <button class="myButton" id="signupForm">SIGNUP</button>
-            <div id="negativeresponse"></div>
+            
 
             <P>Already have an account? <a href="signin.html">login </a></P>
         </div>
-        <div id = "signup"></div>
-        <script>
-        let password = document.getElementById("password").value
-        let confirmpassword = document.getElementById("confirm_password").value
-       
-        if(password !== confirmpassword){
-            document.getElementById("signup").innerHTML =="The passwords entered do not match"
-        }
-        </script>
-    </form>
-<div id = "verify"></div>
-    </div>
+
+
     <script src="../js/signup.js"></script>
 </body>
 

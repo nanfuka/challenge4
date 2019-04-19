@@ -31,6 +31,7 @@ function myGroups() {
                         
                         <th>Role</th>
                         <th>DELETE</th>
+                        <th>Add users to group</th>
                     </tr>
                         `;
                 d.forEach((user) => {
@@ -41,7 +42,8 @@ function myGroups() {
                         <td>${user.name}</td>
                         
                         <td>${user.role}</td>
-                        <td><a href = "../html/delete_group.html?id=${user.id}"> Delete</a></td></tr>
+                        <td><a href = "../html/delete_group.html?id=${user.id}"> Delete</a></td>
+                        <td><a href = "../html/add_members_to_group.html?id=${user.id}"> add members to group</a></td></tr>
                         `
                 });
                 group += "</table>"

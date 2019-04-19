@@ -35,7 +35,7 @@ document.getElementById('login').addEventListener('click', Login);
 
                             } else {
 
-                                document.getElementById("negativeresponse").innerHTML = data.error
+                                document.getElementById("negativeresponse").innerHTML = `<h1 style="color:red; background-color:pink; margin: 2%; font-size: 100%;" >${data.error}</h1>`
                             }
                         })
                 }

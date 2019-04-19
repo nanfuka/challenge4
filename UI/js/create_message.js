@@ -41,7 +41,8 @@ function Compose(e) {
             if (response.message === 'you have successfully created a message') {
                 document.getElementById("negative").innerHTML = `<p style="background-color:green; width: 60%; margin-left: 20%;">message sent</p>`;
             } else {
-                document.getElementById("negative").innerHTML = `<p style="background-color:red; width: 60%; margin-left: 20%;">${response.error}</p>`
+
+                document.getElementById("negative").innerHTML = `<p style="background-color:rgb(228, 173, 173); color: red; font-size: 90%; width: 40%;padding: 1%; margin-left: 20%; text-align: center;">${response.error}</p>`
             }
         })
         .catch(err => console.log(err));

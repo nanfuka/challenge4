@@ -25,6 +25,7 @@
              } else if (response.status == 200) {
                  var d = response.data;
                  console.log(d)
+                 window.location.replace('./user_dash.html')
              }
          })
  }

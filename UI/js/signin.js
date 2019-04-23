@@ -13,6 +13,7 @@ document.getElementById('login').addEventListener('click', Login);
 
                     fetch('https://epiks.herokuapp.com/api/v2/auth/login', {
                             method: 'POST',
+                            mode:"cors",
                             headers: {
                                 'Accept': 'application/json, text/plain, */*',
 

@@ -88,8 +88,9 @@ function RegisterUser(e) {
     }
 
 
-    fetch('https://epiks.herokuapp.com/api/v2/auth/signup', {
+    fetch('http://127.0.0.1:5000/api/v2/auth/signup', {
             method: 'POST',
+            mode:"cors",
             headers: {
                 'Accept': 'application/json, text/plain, */*',
 

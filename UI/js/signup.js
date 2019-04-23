@@ -19,7 +19,7 @@ function RegisterUser(e) {
 
     fetch('https://epiks.herokuapp.com/api/v2/auth/signup', {
             method: 'POST',
-            mode:"cors",
+            // mode:"cors",
             headers: {
                 'Accept': 'application/json, text/plain, */*',
 

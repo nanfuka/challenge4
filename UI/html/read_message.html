@@ -1,107 +1,127 @@
 <html>
 
-        <head>
-            <title>
-                Epic-mail
-            </title>
-            <link rel="stylesheet" href="../css/styl.css">
-            <script src="../js/get_recieved.js"></script>
-        </head>
-        
-        <body onload="myFunction()">
-            <div class="nav1">
-                <a href="../index.html">Home</a>
-                <a href="signin.html">Logout</a>
-                <a href="signin.html">Login</a>
-            </div>
-            <div class="navbuttons">
-                <a href="sent.html">sent</a>
-                <a href="user_dash.html" class="active-page">inbox</a>
-                <a href="compose.html">compose</a>
-                <a href="admin.html">create a group</a>
-                <a href="view_groups.html">view all groups created</a>
+<head>
+    <title>
+        Epic-mail
+    </title>
+    <link rel="stylesheet" href="../css/site.css">
+    <!-- <script src="../js/get_recieved.js"></script> -->
+</head>
 
+<body onload="myFunction()">
+    <div class="nav1">
+        <a href="../index.html">Home</a>
+        <a href="signin.html">Logout</a>
+        <a href="signin.html">Login</a>
+    </div>
+    <div class="navrow">
+        <div class="navbuttons">
+            <a href="sent.html">sent</a>
+            <a href="user_dash.html" class="active-page">inbox</a>
+            <a href="compose.html">compose</a>
+            <a href="admin.html">create a group</a>
+            <a href="view_groups.html">view all groups created</a>
 
-                <div id="info"></div>
+        </div>
+        <div class="row3" id="row3">
+            <div id = "negative"></div>
+            <div id="dits">
+                <div class="compose">
+                    <div id="from"></div>
+                    <div id="to"></div>
+                    <div id="message"></div>
+                    <div id="subject"></div>
 
-                <div class="colrow">
-                
-                    <div class="main-body">
-                        <div class="compose-row11">
-                            <div>From: </div>
-                            <div id="from"></div>
-        
-                        </div>
-                        <div class="compose-row2">
-                            <div><b>To:</b> </div>
-                            <div id="to"></div>
-        
-                        </div>
-                        <div class="compose-row3">
-        
-                            <div><b>Subject:</b> </div>
-                            <div id="subject"></div>
-                        </div>
-        
-                        <div class="compose-message">
-        
-                            <div><b>Message:</b> </div>
-                            <div id="message"></div>
-                        </div>
-                      
-                    </div>
-        
-                            
-                                <button id = "send">send</button>
-        
-        
-                            
-                        </div>
-                    </div>
+                    <!-- <input type="text" id="subject" placeholder="Subject"></p>
+
+                    
+                    <p><input type="text" id="message" placeholder="write your message here"></p>
+                    <div id="reply"></div>
+
+                    <button id="send" value="sent"><b>send</b></button> -->
+
                 </div>
-        
-        </body>
-        <script>
-            window.onload = function () {
-                let current_url = location.href
-                let url = new URL(current_url)
-                let message_id = url.searchParams.get('id')
-                readMessage(message_id)
-                r = document.getElementById('receiver-addr')
-        
-            }
-        
-            function readMessage(id) {
-                let readmsgUrl = `http://127.0.0.1:5000/api/v2/messages/${id}`;
-                token = localStorage.getItem('token');
-                fetch(readmsgUrl, {
-                        headers: {
-                            'Authorization': `Bearer ${token}`
-                        }
-                    })
-                    .then(res => res.json())
-                    .then(response => {
-                        // alert(response)
-                        // .then(response => {
-                        if (response.error === "you have no recieved messages") {
-                            // console.log(response)
-                            document.getElementById('no_mail').innerHTML = response.error;
-                        } else if (response.status == 200) {
-                            var d = response.data;
-                            console.log(d)
-                            let result = ``;
-                            let email = ``;
-                            d.forEach((msg) => {
-        
-                                document.getElementById("from").innerHTML = `${msg.sender_email}`;
-                                document.getElementById("to").innerHTML = `${msg.reciever_email}`;
-                                document.getElementById("message").innerHTML = `${msg.message}`;
-                                document.getElementById("subject").innerHTML = `${msg.subject}`;
-                               
-        
-                                document.getElementById('info').innerHTML = result;
-                               
-                            });
-                        }
-                    })
-            }
+            </div>
+
+            <div id="no_mail"></div>
+
+        </div>
+    </div>
+    </div>
+
+    <div class="fuuter">
+        <div class="footer1">
+            <ul>
+                <li><b>Our Partners</b></li>
+                <li>Andela Uganda</li>
+                <li>Andela Nigeria</li>
+            </ul>
+        </div>
+
+
+
+        <div class="footer3">
+            <p><b>Copyright 2019</b></p>
+        </div>
+
+
+
+        <div class="footer2">
+            <ul>
+                <li><b>Contact Us</b></li>
+                <li>Website: www.epic.com</li>
+                <li>Email: user@epic.com</li>
+                <li>Tel: +07445478554</li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+
+<script>
+    window.onload = function myFunction() {
+        let current_url = location.href
+        let url = new URL(current_url)
+        let message_id = url.searchParams.get('id')
+        readMessage(message_id)
+        r = document.getElementById('receiver-addr')
+
+    }
+
+    function readMessage(id) {
+        let readmsgUrl = `http://127.0.0.1:5000/api/v2/messages/${id}`;
+        token = localStorage.getItem('token');
+        fetch(readmsgUrl, {
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            })
+            .then(res => res.json())
+            .then(response => {
+                // alert(response)
+                // .then(response => {
+                if (response.error === "you have no recieved messages") {
+                    // console.log(response)
+                    document.getElementById('no_mail').innerHTML = response.error;
+                } else if (response.status == 200) {
+                    var d = response.data;
+                    console.log(d)
+                    let result = ``;
+                    let email = ``;
+                    d.forEach((msg) => {
+
+                        document.getElementById("from").innerHTML = `${msg.sender_email}`;
+                        document.getElementById("to").innerHTML = `${msg.reciever_email}`;
+                        document.getElementById("message").innerHTML = `${msg.message}`;
+                        document.getElementById("subject").innerHTML = `${msg.subject}`;
+                       
+
+                        document.getElementById('info').innerHTML = result;
+                       
+                    });
+                }
+            })
+    }
+
+</script>
+</html>

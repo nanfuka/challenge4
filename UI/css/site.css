@@ -1,5 +1,6 @@
 body>div {
     min-height: 10vh;
+    
     /* min-width: 100%; */
     display: flex;
     /* align-items: center;
@@ -8,6 +9,31 @@ body>div {
     /* border: solid 1px red; */
     /* border: 0; */
 }
+.footer1{
+    margin-right: 10%;
+}
+.footer2{
+    margin-right: 10%;
+}
+.footer3{
+    margin-right: 10%;
+}
+body>.section {
+    min-height: 15vh;
+    
+    font-family: 'Shadows Into Light', cursive;
+    /* min-width: 100%; */
+    display: flex;
+   justify-content: center;
+   margin-top: 5%;
+
+    /* align-items: center;
+    justify-content: center; */
+    /* background-color: brown; */
+    /* border: solid 1px red; */
+    /* border: 0; */
+}
+
 
 .form {
 
@@ -25,6 +51,9 @@ body>div {
     margin-bottom: 1%;
     width: 98%;
     margin-right: 1%;
+}
+.row3 h2{
+    margin-left: 24%;
 }
 
 .negativeresponses {
@@ -56,6 +85,7 @@ body>div {
     background-color: rgb(242, 250, 231);
     font-family: 'Abril Fatface', cursive;
     color: green;
+    text-align: center;
 
 }
 
@@ -66,32 +96,48 @@ body>div {
 
 }
 .compose{
-    /* text-align: left; */
+    text-align: left; 
     /* margin: 5%; */
-    align-items: center;
-    /* justify-content: center; */
-     /* border: solid 1px red; */
-     width:70%;
-     margin-left: 15%;
-     margin-top: 5%;
+    /* align-items: center; 
+    justify-content: center; */
+     border: solid 1px red;
+      width:100%;
+     /* margin-left: 15%; */
+    
      font-family: 'Shadows Into Light', cursive;
 
 
 
-}
+} 
 #reciever_email{
-    margin-left: 5%;
-    width: 60%;
+    margin-top: 2%;
+    margin-left:5%;
+    width: 70%;
+    margin-bottom: 2%;
+    font-family: 'Shadows Into Light', cursive; 
+    padding: 1%;
 
 }
 #subject{
-    margin-left: 1%;
-    width: 60%;
+    margin-top: 2%;
+    margin-left:5%;
+    width: 70%;
+    margin-bottom: 2%;
+    font-family: 'Shadows Into Light', cursive; 
+    padding: 1%;
 }
 #message {
-    width: 60%;
+    /* width: 100%;
     height: 20%;
-    margin-left: 8%;
+    margin-left: 5%; */
+
+   
+    margin-left:5%;
+    width: 70%;
+    margin-bottom: 2%;
+    font-family: 'Shadows Into Light', cursive; 
+    padding: 1%;
+    min-height: 10vh;
 }
 #send{
     margin-left: 25%;
@@ -118,10 +164,6 @@ body>div {
     /* border: solid 1px blue; */
     /* margin: 1%; */
     width: 17%;
-    
-
-
-
 
 }
 .navbuttons a{
@@ -162,4 +204,55 @@ table {
     text-decoration: none;
     font-family: 'Shadows Into Light', cursive;
 
+}
+
+.myButton{
+    /* font-family: 'Shadows Into Light', cursive;
+padding: 5%;
+width: 100%;
+margin: 25%;
+font-size: 120%;
+background-color: rgb(211, 182, 238);
+border: 0;
+}
+.myButtons{
+    font-family: 'Shadows Into Light', cursive;
+padding: 5%;
+width: 100%;
+margin: 25%;
+font-size: 120%;
+background-color: rgb(211, 182, 238);
+border: 0;
+} */
+/* .footer1{
+ /* justify-content: space-evenly; */
+}
+#name{
+    margin-left: 5%;
+    width: 70%;
+    margin-bottom: 2%;
+    font-family: 'Shadows Into Light', cursive; 
+    padding: 1%;
+}
+#role{
+    margin-left: 5%;
+    width: 70%;
+    margin-bottom: 2%;
+    font-family: 'Shadows Into Light', cursive; 
+    padding: 1%;
+}
+#creategroup{
+    margin-left: 5%;
+    width: 70%;
+    margin-bottom: 2%;
+    font-family: 'Shadows Into Light', cursive; 
+    padding: 1%;
+}
+
+#user{
+    text-decoration: none;
+    color: rgb(191, 180, 240);
+    margin-left: 5%;
+    margin-top: 1%;
+    font-family: 'Shadows Into Light', cursive;
 }

@@ -8,7 +8,7 @@
  }
 
  function readMessage(id) {
-     let readmsgUrl = `http://127.0.0.1:5000/api/v2/messages/delete/${id}`;
+     let readmsgUrl = `https://epiks.herokuapp.com/api/v2/messages/delete/${id}`;
      token = localStorage.getItem('token');
      fetch(readmsgUrl, {
              method: 'DELETE',

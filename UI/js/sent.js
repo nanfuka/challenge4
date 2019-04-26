@@ -1,5 +1,5 @@
 function mySent() {
-    let recieveUrl = 'https://epiks.herokuapp.com/api/v2/messages/sent';
+    let recieveUrl = 'http://127.0.0.1:5000/api/v2/messages/sent';
     token = localStorage.getItem('token');
     if (token === null) {
         alert('please login');

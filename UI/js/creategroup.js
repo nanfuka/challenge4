@@ -1,6 +1,6 @@
 document.getElementById('creategroup').addEventListener('click', Compose);
 
-const creategroup = 'https://epiks.herokuapp.com/api/v2/groups';
+const creategroup = 'http://127.0.0.1:5000/api/v2/groups';
 
 function Compose(e){
     e.preventDefault();

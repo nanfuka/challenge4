@@ -1,5 +1,5 @@
 function myFunction() {
-    let recieveUrl = 'https://epiks.herokuapp.com/api/v2/messages';
+    let recieveUrl = 'http://127.0.0.1:5000/api/v2/messages';
     token = localStorage.getItem('token');
     if (token === null) {
         alert('please login');
@@ -28,7 +28,7 @@ function myFunction() {
                      document.getElementById("user").innerHTML = `${msg.reciever_email}`                   
                     result +=                        
                         `<tr>
-                       
+                        <td><input type = "radio" value = "${msg.sender_email}" name = "identity"onchange = "myFunctions(${msg.id})"></td>
                         <td>${msg.sender_email}</td>
                        
                         <td><a href = "../html/read_message.html?id=${msg.id}" id = "detail"> ${msg.subject}</a></td>
@@ -45,11 +45,95 @@ function myFunction() {
 
             }
         })
+
+// function myFunctions(id){
+//     console.log(id)
+//     localStorage.setItem('identity', id)
+   
+//     return id;
+//     // deleteds(id)
+// }
+// function deleteds(){
+//     identi = localStorage.getItem('identity');
+//     console.log(identi)
+
+// }
+// var number = id;
+// console.log(id);
+// var ids = myFunctions()
+// function deleteds(x){
+//     // var y = myFunctions()
+//     console.log(x);
+//     return x;
+// }
+// function deleteds(myFunctions);
+
+
+    // console.log(ids)
+    // if (confirm("Are you sure you want to delete this Message!")){
+    //     let readmsgUrl = `http://127.0.0.1:5000/api/v2/messages/delete/${ids}`;
+    //     token = localStorage.getItem('token');
+    //     fetch(readmsgUrl, {
+    //             method: 'DELETE',
+    
+    //             headers: {
+    //                 'Authorization': `Bearer ${token}`
+    //             }
+    //         })
+    //         .then(res => res.json())
+    //         .then(response => {
+    //             console.log(response)
+    //             if (response.error === "you have no recieved messages") {
+    //                 document.getElementById('no_mail').innerHTML = response.error;
+    //             } else if (response.status == 200) {
+    //                 var d = response.data;
+    //                 console.log(d)
+    //                 document.getElementById('no_mail').innerHTML = d;
+    //                 window.location.replace('./user_dash.html')
+    //             }
+    //         })
+    // }
+    // }
+
+// function deletes(id) {
+//     if (confirm("Are you sure you want to delete this Message!")){
+//     let readmsgUrl = `http://127.0.0.1:5000/api/v2/messages/delete/${id}`;
+//     token = localStorage.getItem('token');
+//     fetch(readmsgUrl, {
+//             method: 'DELETE',
+
+//             headers: {
+//                 'Authorization': `Bearer ${token}`
+//             }
+//         })
+//         .then(res => res.json())
+//         .then(response => {
+//             console.log(response)
+//             if (response.error === "you have no recieved messages") {
+//                 document.getElementById('no_mail').innerHTML = response.error;
+//             } else if (response.status == 200) {
+//                 var d = response.data;
+//                 console.log(d)
+//                 document.getElementById('no_mail').innerHTML = d;
+//                 window.location.replace('./user_dash.html')
+//             }
+//         })
+// }
 }
 
-function deletes(id) {
+function myFunctions(id){
+    console.log(id)
+    localStorage.setItem('identity', id)
+    document.getElementById("ikons").style.display = "block";
+    return id;
+    // deleteds(id)
+}
+
+function deleteds(){
+    identi = localStorage.getItem('identity');
+    console.log(identi)
     if (confirm("Are you sure you want to delete this Message!")){
-    let readmsgUrl = `https://epiks.herokuapp.com/api/v2/messages/delete/${id}`;
+    let readmsgUrl = `http://127.0.0.1:5000/api/v2/messages/delete/${identi}`;
     token = localStorage.getItem('token');
     fetch(readmsgUrl, {
             method: 'DELETE',
@@ -71,4 +155,5 @@ function deletes(id) {
             }
         })
 }
+
 }

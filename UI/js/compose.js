@@ -1,7 +1,7 @@
 document.getElementById('send').addEventListener('click', Compose);
 
 
-const postUrl = 'https://epiks.herokuapp.com/api/v2/message';
+const postUrl = 'http://127.0.0.1:5000/api/v2/message';
 
 function Compose(e){
     e.preventDefault();

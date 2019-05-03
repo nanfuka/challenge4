@@ -16,8 +16,9 @@ function RegisterUser(e) {
         "password": password
     }
 
-
-    fetch('https://epiks.herokuapp.com/api/v2/auth/signup', {
+    const proxyurl = "https://cors-anywhere.herokuapp.com/";
+    const url = 'https://epiks.herokuapp.com/api/v2/auth/signup'
+    fetch(proxyurl + url, {
             method: 'POST',
             mode:"cors",
             headers: {
@@ -44,4 +45,5 @@ function RegisterUser(e) {
                 // document.getElementById("negativeresponse").style.display = block
             }
         })
+        .catch(() => console.log("Can’t access " + url + " response. Blocked by browser?"))
 }

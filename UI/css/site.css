@@ -108,9 +108,19 @@ body>.section {
 }
 #ikons{
     display: none;
+    margin-left: 11%;
+    border: solid 1px rgb(161, 159, 159);
+    margin-right: 30%;
+    margin-top: 1%;
+    background-color: rgb(111, 111, 250);
 }
-
-} 
+.face{
+    align-content: center;
+    justify-content: center;
+}
+ a{
+     text-decoration: none;
+ } 
 #reciever_email{
     margin-top: 2%;
     margin-left:5%;
@@ -205,7 +215,16 @@ table {
     padding: 10px;
     text-decoration: none;
     font-family: 'Shadows Into Light', cursive;
+   
 
+}
+.welcome{
+    display: flex;
+    flex-direction: row;
+    margin-left: 60%;
+    color: white;
+    font-family: 'Shadows Into Light', cursive;
+    padding: 10px;
 }
 
 .myButton{
@@ -243,6 +262,13 @@ border: 0;
     font-family: 'Shadows Into Light', cursive; 
     padding: 1%;
 }
+#email{
+    margin-left: 5%;
+    width: 70%;
+    margin-bottom: 2%;
+    font-family: 'Shadows Into Light', cursive; 
+    padding: 1%;
+}
 #creategroup{
     margin-left: 5%;
     width: 70%;
@@ -251,10 +277,7 @@ border: 0;
     padding: 1%;
 }
 
-#user{
-    text-decoration: none;
-    color: rgb(191, 180, 240);
-    margin-left: 5%;
-    margin-top: 1%;
-    font-family: 'Shadows Into Light', cursive;
-}
+ #user{
+    margin-left: 8px;
+
+} 

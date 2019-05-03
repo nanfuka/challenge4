@@ -11,6 +11,7 @@
      let readmsgUrl = `https://epiks.herokuapp.com/api/v2/messages/delete/${id}`;
      token = localStorage.getItem('token');
      fetch(readmsgUrl, {
+             mode: 'cors',
              method: 'DELETE',
 
              headers: {

@@ -5,15 +5,15 @@
         Epic-mail
     </title>
     <link rel="stylesheet" href="../css/site.css">
-    <!-- <script src="../js/get_recieved.js"></script> -->
+
+
 </head>
 
-<body onload="myFunction()">
+<body onload="myGroupmembers()">
     <div class="nav1">
         <a href="../index.html">Home</a>
         <a href="signin.html">Logout</a>
         <a href="signin.html">Login</a>
-        <div id = "user"></div>
     </div>
     <div class="navrow">
         <div class="navbuttons">
@@ -25,22 +25,13 @@
 
         </div>
         <div class="row3" id="row3">
-            <div id = "negative"></div>
-            <div id="dits">
-                <div class="compose">
-
-                        <p><input type="text" id="subject" placeholder="Subject"></p>
-
-                    
-                    <p><input type="text" id="message" placeholder="write your message here"></p>
-                    <div id="reply"></div>
-
-                    <button id="send" value="sent"><b>send</b></button>
-
-                </div>
-            </div>
-
-            <div id="no_mail"></div>
+                <div id = "ikons">
+                        <p onclick='deletes()'><img src="../images/delete.png" alt="delete" height="22" width="22"></p>
+                    </div>
+                <div id = "allgroups"></div>
+                <div id = "no_mail"></div>
+                <div id = "info"></div>
+                <div id = "deletemessage"></div>
 
         </div>
     </div>
@@ -73,6 +64,7 @@
         </div>
     </div>
 </body>
-<script src="../js/create_message.js"></script>
+<script src="../js/allgroupsmembers.js"></script>
+
 
 </html>

@@ -11,7 +11,7 @@ document.getElementById('login').addEventListener('click', Login);
                         "password": password
                     }
 
-                    fetch('http://127.0.0.1:5000/api/v2/auth/login', {
+                    fetch('https://epiks.herokuapp.com/api/v2/auth/login', {
                             method: 'POST',
                             mode:"cors",
                             headers: {
@@ -29,11 +29,7 @@ document.getElementById('login').addEventListener('click', Login);
                             if (data.message === 'you have successfully logged in as a user') {
                                 token = data.data[0].token;
                                 localStorage.setItem('token', token)
-
-                                // console.log(token)
                                 window.location.replace('/UI/html/user_dash.html')
-
-
                             } else {
 
                                 document.getElementById("negativeresponse").innerHTML = `<h1 style="color:red; background-color:pink; margin: 2%; font-size: 100%;" >${data.error}</h1>`

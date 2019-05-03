@@ -1,6 +1,6 @@
 document.getElementById('creategroup').addEventListener('click', Compose);
 
-const creategroup = 'http://127.0.0.1:5000/api/v2/groups';
+const creategroup = 'https://epiks.herokuapp.com/api/v2/groups';
 
 function Compose(e){
     e.preventDefault();
@@ -21,6 +21,7 @@ function Compose(e){
 
     fetch(creategroup, {
         method: 'POST',
+        mode: 'cors',
         headers: {
             'Authorization': `Bearer ${token}`,
             'Content-Type': 'application/json'
@@ -31,7 +32,8 @@ function Compose(e){
     .then(response => {
         console.log(response);
         if (response.status === 201){
-            document.getElementById("response").innerHTML = `<p style="background-color:green; width: 17%; margin-left: 45%;">group created</p>`           
+            document.getElementById("response").innerHTML = `<p style="background-color:green; width: 17%; margin-left: 45%;">group created</p>`
+                       
         } else {
             document.getElementById("response").innerHTML = `<p style="background-color:red; width: 17%; margin-left: 45%;">${response.error}</p>`           
 

@@ -1,6 +1,6 @@
 document.getElementById('send').addEventListener('click', Compose);
 
-const postmessage = 'http://127.0.0.1:5000/api/v2/message';
+const postmessage = 'https://epiks.herokuapp.com/api/v2/message';
 
 function Compose(e) {
     e.preventDefault();
@@ -25,7 +25,7 @@ function Compose(e) {
 
     fetch(postmessage, {
             method: 'POST',
-            // mode: 'cors',
+            mode: 'cors',
             headers: {
                 'Authorization': `Bearer ${token}`,
                 'Content-Type': 'application/json'
@@ -40,6 +40,8 @@ function Compose(e) {
             }
             if (response.message === 'you have successfully created a message') {
                 document.getElementById("negative").innerHTML = `<p style="background-color:green; width: 60%; margin-left: 20%;">message sent</p>`;
+                window.location.replace('/UI/html/compose.html');
+
             } else {
 
                 document.getElementById("negative").innerHTML = `<p style="background-color:rgb(228, 173, 173); color: red; font-size: 90%; width: 40%;padding: 1%; margin-left: 20%; text-align: center;">${response.error}</p>`
@@ -48,6 +50,3 @@ function Compose(e) {
         .catch(err => console.log(err));
 }
 
-// function myFunction(){
-//     document.getElementById()
-// }

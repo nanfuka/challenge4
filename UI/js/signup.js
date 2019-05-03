@@ -45,5 +45,4 @@ function RegisterUser(e) {
                 // document.getElementById("negativeresponse").style.display = block
             }
         })
-        // .catch(() => console.log("Can’t access " + url + " response. Blocked by browser?"))
 }

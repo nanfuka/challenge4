@@ -17,7 +17,7 @@ document.getElementById('login').addEventListener('click', Login);
                     mode: "cors",
                             
                             headers: {
-                                'Accept': 'application/json, text/plain, */*',
+                            
 
                                 'content_type': 'application/json'
                             },

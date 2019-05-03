@@ -18,7 +18,7 @@ function RegisterUser(e) {
 
     const proxyurl = "https://cors-anywhere.herokuapp.com/";
     const url = 'https://epiks.herokuapp.com/api/v2/auth/signup'
-    fetch(proxyurl + url, {
+    fetch(url, {
             method: 'POST',
             mode:"cors",
             headers: {
